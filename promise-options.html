@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Promise Section — Video & Image Options | Gut & Gynae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --base: #F6F7F4;
+  --base-deep: #EDF1EC;
+  --ink: #1F2E2B;
+  --ink-soft: #556B66;
+  --teal: #1E5F63;
+  --teal-deep: #144447;
+  --teal-dark: #0C2E33;
+  --rose: #A5566B;
+  --rose-deep: #7E3D50;
+  --white: #FFFFFF;
+  --line: #D8E0DB;
+  --font-display: 'Marcellus', Georgia, serif;
+  --font-body: 'Figtree', system-ui, sans-serif;
+  --shadow-md: 0 10px 30px rgba(31,46,43,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family: var(--font-body);
+  background: var(--base);
+  color: var(--ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Nav */
+.top-nav{
+  background: rgba(246,247,244,.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 14px 24px;
+}
+.nav-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-back{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--teal);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform .2s, color .2s;
+}
+.nav-back:hover{
+  transform: translateX(-3px);
+  color: var(--teal-deep);
+}
+.brand{
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand .amp{
+  color: var(--rose);
+}
+
+/* Header */
+.page-header{
+  padding: 44px 24px 28px;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.eyebrow{
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+.page-title{
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.5vw, 40px);
+  color: var(--ink);
+  line-height: 1.25;
+}
+.page-lead{
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* Live Interactive Section Stage */
+.stage-wrap{
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+}
+.stage-card{
+  background: #000;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(20,68,71,.2);
+  border: 1px solid rgba(255,255,255,.1);
+}
+.stage-toolbar{
+  background: #111A19;
+  padding: 16px 22px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.stage-indicator{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+.stage-indicator .pulse-dot{
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 10px #10B981;
+}
+.tab-pills{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tab-btn{
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.8);
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: inherit;
+}
+.tab-btn:hover{
+  background: rgba(255,255,255,.18);
+  color: #fff;
+}
+.tab-btn.active{
+  background: var(--teal);
+  border-color: #2dd4bf;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(45,212,191,.3);
+}
+
+/* The Live Band Rendering */
+.band-preview{
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  transition: opacity .35s ease;
+}
+.band-bg-media{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.band-bg-media video,
+.band-bg-media img,
+.band-bg-media .gradient-box{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.band-bg-media .gradient-box{
+  background: radial-gradient(circle at 30% 30%, #1E5F63 0%, #0C2E33 50%, #401A25 100%);
+  animation: auroraFlow 12s ease-in-out infinite alternate;
+}
+@keyframes auroraFlow{
+  0%{ transform: scale(1) rotate(0deg); filter: hue-rotate(0deg); }
+  50%{ transform: scale(1.08) rotate(2deg); filter: hue-rotate(15deg); }
+  100%{ transform: scale(1) rotate(0deg); filter: hue-rotate(0deg); }
+}
+.band-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12,46,51,.65) 0%, rgba(126,61,80,.55) 100%);
+  z-index: 1;
+  transition: background .3s;
+}
+.band-content{
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  padding: 60px 24px;
+}
+.band-content .eyebrow{
+  color: rgba(255,255,255,.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.band-content .eyebrow::before,
+.band-content .eyebrow::after{
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, #7FD4CE, var(--rose-soft, #f472b6));
+}
+.band-quote{
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4.4vw, 44px);
+  color: #fff;
+  line-height: 1.28;
+  margin-top: 22px;
+  text-shadow: 0 3px 24px rgba(12,46,51,.6);
+}
+.band-credit{
+  margin-top: 22px;
+  color: rgba(255,255,255,.88);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
+
+/* Gallery Grid */
+.options-gallery{
+  max-width: 1200px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+}
+.gallery-title{
+  font-family: var(--font-display);
+  font-size: 26px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.gallery-title::before{
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 24px;
+  background: var(--teal);
+  border-radius: 3px;
+}
+.cards-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+.opt-card{
+  background: var(--white);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 18px rgba(31,46,43,.04);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  display: flex;
+  flex-direction: column;
+}
+.opt-card:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--teal);
+}
+.opt-card.is-active-card{
+  border: 2px solid var(--teal);
+  box-shadow: 0 0 0 4px rgba(30,95,99,.15);
+}
+.opt-preview-box{
+  height: 180px;
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+.opt-preview-box img,
+.opt-preview-box video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.opt-badge{
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(12,46,51,.85);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 6px;
+  backdrop-filter: blur(6px);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.opt-body{
+  padding: 20px 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.opt-title{
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.opt-desc{
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  flex: 1;
+}
+.opt-vibe{
+  margin-top: 12px;
+  font-size: 12.5px;
+  color: var(--teal-deep);
+  background: rgba(30,95,99,.06);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.opt-action{
+  margin-top: 16px;
+}
+.btn-select{
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid var(--teal);
+  background: transparent;
+  color: var(--teal);
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: inherit;
+}
+.btn-select:hover{
+  background: var(--teal);
+  color: #fff;
+}
+.opt-card.is-active-card .btn-select{
+  background: var(--teal);
+  color: #fff;
+}
+
+/* Instructions card */
+.choice-banner{
+  background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-deep) 100%);
+  color: #fff;
+  border-radius: 18px;
+  padding: 30px;
+  margin: 40px auto 70px;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.choice-banner h3{
+  font-family: var(--font-display);
+  font-size: 24px;
+}
+.choice-banner p{
+  margin-top: 6px;
+  color: rgba(255,255,255,.85);
+  font-size: 14.5px;
+}
+</style>
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Main Website
+    </a>
+    <a href="index.html" class="brand">Gut<span class="amp">&amp;</span>Gynae</a>
+  </div>
+</header>
+
+<div class="page-header">
+  <p class="eyebrow">Interactive Visual &amp; Video Showcase</p>
+  <h1 class="page-title">&ldquo;Our Promise&rdquo; Section Options</h1>
+  <p class="page-lead">Compare different visual and motion treatments for the quote section. Tap any tab or option below to see how it renders live with the actual typography, lighting, and contrast.</p>
+</div>
+
+<!-- LIVE INTERACTIVE STAGE -->
+<div class="stage-wrap">
+  <div class="stage-card">
+    <div class="stage-toolbar">
+      <div class="stage-indicator">
+        <span class="pulse-dot"></span>
+        <span id="activeOptionLabel">Option 1: Video — Serene Ocean Waves</span>
+      </div>
+      <div class="tab-pills" id="tabContainer">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- The Actual Band Section -->
+    <div class="band-preview" id="bandStage">
+      <div class="band-bg-media" id="mediaContainer">
+        <!-- Injected dynamically -->
+      </div>
+      <div class="band-overlay" id="bandOverlay"></div>
+      <div class="band-content">
+        <p class="eyebrow">Our Promise</p>
+        <p class="band-quote">&ldquo;We treat every patient the way we'd want our own family treated.&rdquo;</p>
+        <p class="band-credit">&mdash; Dr Saransh Vakharia &amp; Dr Prapti Shah</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY SHOWCASE -->
+<div class="options-gallery">
+  <h2 class="gallery-title">All Candidate Options (Click to Preview Live)</h2>
+  <div class="cards-grid" id="cardsGrid">
+    <!-- Rendered by JS -->
+  </div>
+
+  <div class="choice-banner">
+    <div>
+      <h3>Which option do you like best?</h3>
+      <p>Simply let me know your preferred option number (e.g. <em>"Use Option 1"</em> or <em>"I like Option 3"</em>) and I will immediately apply it to your main website.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+var OPTIONS = [
+  {
+    id: "ocean-video",
+    type: "video",
+    tag: "Option 1 · Video",
+    title: "Serene Ocean Waves (Teal Motion)",
+    desc: "Slow-motion aerial teal ocean waves gently rolling. Rhythmic, calming, and deeply grounded in the clinic's signature teal color palette.",
+    vibe: "🌊 Calming, therapeutic, continuous natural movement",
+    src: "assets/promise-waves-teal.mp4",
+    poster: "assets/poster-band.jpg",
+    overlay: "linear-gradient(180deg, rgba(12,46,51,0.65) 0%, rgba(126,61,80,0.55) 100%)"
+  },
+  {
+    id: "hands-image",
+    type: "image",
+    tag: "Option 2 · Image",
+    title: "Compassionate Holding Hands",
+    desc: "A warm, high-resolution photograph of hands gently holding and comforting a patient's hand. Directly embodies 'treating every patient like our own family'.",
+    vibe: "🤝 Deep empathy, gentle bedside compassion, trust",
+    src: "assets/promise-hands.jpg",
+    overlay: "linear-gradient(180deg, rgba(12,46,51,0.72) 0%, rgba(64,26,37,0.72) 100%)"
+  },
+  {
+    id: "sunset-water-video",
+    type: "video",
+    tag: "Option 3 · Video",
+    title: "Golden Twilight Waters (Rose & Gold)",
+    desc: "Sunlight reflecting off peaceful evening water ripples with soft amber and dusk rose tones. Evokes comfort, warmth, and reassuring care.",
+    vibe: "🌅 Warmth, hope, gentle evening comfort",
+    src: "assets/promise-sunset-water.mp4",
+    poster: "assets/promise-sunrise.jpg",
+    overlay: "linear-gradient(180deg, rgba(15,40,44,0.68) 0%, rgba(110,48,68,0.58) 100%)"
+  },
+  {
+    id: "sunrise-image",
+    type: "image",
+    tag: "Option 4 · Image",
+    title: "Misty Dawn Sunrise Horizon",
+    desc: "Golden morning sun breaking through early mist over calm waters. Symbolizes health recovery, new beginnings, and peaceful reassurance.",
+    vibe: "☀️ Hope, renewal, morning clarity & peace of mind",
+    src: "assets/promise-sunrise.jpg",
+    overlay: "linear-gradient(180deg, rgba(12,46,51,0.72) 0%, rgba(126,61,80,0.6) 100%)"
+  },
+  {
+    id: "stethoscope-image",
+    type: "image",
+    tag: "Option 5 · Image",
+    title: "Warm Clinical Stethoscope",
+    desc: "Close-up of a doctor's stethoscope resting on a clean desk with warm ambient bokeh lighting. Reflects clinical precision, attentive listening, and medical excellence.",
+    vibe: "🩺 Modern medical expertise, diagnostic dedication",
+    src: "assets/promise-stethoscope.jpg",
+    overlay: "linear-gradient(180deg, rgba(12,46,51,0.75) 0%, rgba(64,26,37,0.7) 100%)"
+  },
+  {
+    id: "aurora-abstract",
+    type: "abstract",
+    tag: "Option 6 · Abstract",
+    title: "Dual-Tone Aurora Glow (CSS Animation)",
+    desc: "A flowing, modern ambient gradient mesh slowly drifting between Gut Teal and Gynae Rose. Clean, distraction-free, 100% focused on typography.",
+    vibe: "✨ Sophisticated, high-end, zero distraction",
+    overlay: "rgba(0,0,0,0.25)"
+  },
+  {
+    id: "lab-video",
+    type: "video",
+    tag: "Option 7 · Video (Current)",
+    title: "Medical Laboratory Focus (Current)",
+    desc: "The current background clip featuring a hospital/laboratory environment under microscope and blue lighting.",
+    vibe: "🔬 Scientific, modern medical investigation",
+    src: "https://videos.pexels.com/video-files/3195394/3195394-hd_1280_720_25fps.mp4",
+    poster: "assets/poster-band.jpg",
+    overlay: "linear-gradient(180deg, rgba(12,46,51,0.65) 0%, rgba(126,61,80,0.55) 100%)"
+  }
+];
+
+var activeIdx = 0;
+
+function renderTabs(){
+  var tabBox = document.getElementById('tabContainer');
+  tabBox.innerHTML = '';
+  OPTIONS.forEach(function(opt, idx){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tab-btn' + (idx === activeIdx ? ' active' : '');
+    b.textContent = 'Opt ' + (idx + 1) + ' · ' + (opt.type === 'video' ? '🎥 ' : opt.type === 'image' ? '📷 ' : '✨ ') + opt.title.split('(')[0].trim();
+    b.addEventListener('click', function(){
+      selectOption(idx);
+    });
+    tabBox.appendChild(b);
+  });
+}
+
+function renderCards(){
+  var grid = document.getElementById('cardsGrid');
+  grid.innerHTML = '';
+  OPTIONS.forEach(function(opt, idx){
+    var card = document.createElement('div');
+    card.className = 'opt-card' + (idx === activeIdx ? ' is-active-card' : '');
+    card.id = 'card-opt-' + idx;
+    
+    var mediaHtml = '';
+    if (opt.type === 'video') {
+      mediaHtml = '<video src="' + opt.src + '" poster="' + (opt.poster || '') + '" muted loop playsinline onmouseenter="this.play()" onmouseleave="this.pause()"></video>';
+    } else if (opt.type === 'image') {
+      mediaHtml = '<img src="' + opt.src + '" alt="' + opt.title + '" loading="lazy">';
+    } else {
+      mediaHtml = '<div style="width:100%;height:100%;background:radial-gradient(circle at 30% 30%, #1E5F63 0%, #0C2E33 50%, #401A25 100%);"></div>';
+    }
+
+    card.innerHTML = 
+      '<div class="opt-preview-box">' +
+        mediaHtml +
+        '<span class="opt-badge">' + opt.tag + '</span>' +
+      '</div>' +
+      '<div class="opt-body">' +
+        '<h3 class="opt-title">' + opt.title + '</h3>' +
+        '<p class="opt-desc">' + opt.desc + '</p>' +
+        '<div class="opt-vibe">' + opt.vibe + '</div>' +
+        '<div class="opt-action">' +
+          '<button type="button" class="btn-select">' + (idx === activeIdx ? '✓ Currently Previewing' : 'Preview Live &uarr;') + '</button>' +
+        '</div>' +
+      '</div>';
+
+    card.addEventListener('click', function(){
+      selectOption(idx);
+      var stage = document.querySelector('.stage-wrap');
+      if (stage) stage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    grid.appendChild(card);
+  });
+}
+
+function selectOption(idx){
+  activeIdx = idx;
+  var opt = OPTIONS[idx];
+  
+  // Update indicator label
+  document.getElementById('activeOptionLabel').textContent = opt.tag + ': ' + opt.title;
+
+  // Update tabs
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  tabBtns.forEach(function(b, i){
+    if (i === idx) b.classList.add('active');
+    else b.classList.remove('active');
+  });
+
+  // Update cards
+  var cards = document.querySelectorAll('.opt-card');
+  cards.forEach(function(c, i){
+    var btn = c.querySelector('.btn-select');
+    if (i === idx) {
+      c.classList.add('is-active-card');
+      if (btn) btn.textContent = '✓ Currently Previewing';
+    } else {
+      c.classList.remove('is-active-card');
+      if (btn) btn.textContent = 'Preview Live ↑';
+    }
+  });
+
+  // Update live stage
+  var mediaBox = document.getElementById('mediaContainer');
+  var overlay = document.getElementById('bandOverlay');
+  
+  if (opt.overlay) overlay.style.background = opt.overlay;
+
+  if (opt.type === 'video') {
+    mediaBox.innerHTML = '<video autoplay muted loop playsinline preload="auto" poster="' + (opt.poster || '') + '"><source src="' + opt.src + '" type="video/mp4"></video>';
+    var v = mediaBox.querySelector('video');
+    if (v) v.play().catch(function(){});
+  } else if (opt.type === 'image') {
+    mediaBox.innerHTML = '<img src="' + opt.src + '" alt="' + opt.title + '">';
+  } else {
+    mediaBox.innerHTML = '<div class="gradient-box"></div>';
+  }
+}
+
+// Initial Render
+renderTabs();
+renderCards();
+selectOption(0);
+</script>
+</body>
+</html>
