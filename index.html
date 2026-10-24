@@ -3,17 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.className += " js";</script>
+<script>
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  if (window.location.hash) {
+    history.replaceState(null, null, window.location.pathname + window.location.search);
+  }
+  window.scrollTo(0, 0);
+  document.documentElement.className += " js";
+</script>
 <title>Gut &amp; Gynae — Dr Saransh Vakharia &amp; Dr Prapti Shah | GMC Nagpur</title>
 <meta name="description" content="Gut & Gynae — Super-specialized Surgical Gastroenterology by Dr Saransh Vakharia and advanced Obstetrics & Gynaecology by Dr Prapti Shah at Government Medical College (GMC), Nagpur.">
 
 <!-- OpenGraph / Social Media & WhatsApp Link Preview -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Gut &amp; Gynae">
-<meta property="og:title" content="Gut &amp; Gynae — Dr Saransh Vakharia &amp; Dr Prapti Shah">
-<meta property="og:description" content="Surgical Gastroenterology & Advanced Obstetrics & Gynaecology at Government Medical College (GMC), Nagpur. Two specialists, complete patient-first care.">
-<meta property="og:image" content="assets/poster-gut.jpg">
+<meta property="og:title" content="Gut &amp; Gynae — Dr. Saransh Vakharia &amp; Dr. Prapti Shah">
+<meta property="og:description" content="Super-specialized Surgical Gastroenterology & Advanced Obstetrics & Gynaecology at Government Medical College (GMC), Nagpur. Two specialists, complete patient-first care.">
+<meta property="og:image" content="https://folders-fixes-hammer-internal.trycloudflare.com/assets/og-preview.jpg">
+<meta property="og:image:secure_url" content="https://folders-fixes-hammer-internal.trycloudflare.com/assets/og-preview.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gut &amp; Gynae — Dr Saransh Vakharia &amp; Dr Prapti Shah | GMC Nagpur">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gut &amp; Gynae — Dr Saransh Vakharia &amp; Dr Prapti Shah">
+<meta name="twitter:description" content="Surgical Gastroenterology & Advanced Obstetrics & Gynaecology at GMC Nagpur.">
+<meta name="twitter:image" content="https://folders-fixes-hammer-internal.trycloudflare.com/assets/og-preview.jpg">
 
 <!-- Preconnect & Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2280,6 +2297,8 @@ html:not(.js) .amp-svg text{fill-opacity:1;stroke-dashoffset:0;animation:none}
     if (typeof Lenis !== 'undefined'){
       document.documentElement.classList.add('lenis');
       lenis = new Lenis({ lerp: 0.11, smoothWheel: true });
+      window.lenis = lenis;
+      lenis.scrollTo(0, { immediate: true });
       lenis.on('scroll', ScrollTrigger.update);
       lenis.on('scroll', function(e){
         var y = (e && typeof e.scroll === 'number') ? e.scroll : window.scrollY;
@@ -2730,6 +2749,16 @@ html:not(.js) .amp-svg text{fill-opacity:1;stroke-dashoffset:0;animation:none}
       });
     });
   }
+
+  // Enforce scroll to top on page load / reload (ensures mobile opens at top)
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      window.scrollTo(0, 0);
+      if (window.lenis) {
+        try { window.lenis.scrollTo(0, { immediate: true }); } catch(e){}
+      }
+    }, 15);
+  });
 })();
 </script>
 </body>

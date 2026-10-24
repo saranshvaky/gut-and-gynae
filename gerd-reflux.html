@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+  if (window.location.hash) { history.replaceState(null, null, window.location.pathname + window.location.search); }
+  window.scrollTo(0, 0);
+</script>
+
 <title>GERD, Acid Reflux & Hiatal Hernia — Dr Saransh Vakharia | Gut &amp; Gynae</title>
 <meta name="description" content="Comprehensive patient guide to chronic acid reflux, hiatal hernia, endoscopic diagnosis, and laparoscopic fundoplication by Dr Saransh Vakharia at GMC Nagpur.">
 

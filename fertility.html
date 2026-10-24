@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+  if (window.location.hash) { history.replaceState(null, null, window.location.pathname + window.location.search); }
+  window.scrollTo(0, 0);
+</script>
+
 <title>Fertility Evaluation & ART Guidance — Dr Prapti Shah | Gut &amp; Gynae</title>
 <meta name="description" content="Compassionate, evidence-based couple fertility assessment, ovulatory induction, IUI, and assisted reproductive guidance by Dr Prapti Shah.">
 
