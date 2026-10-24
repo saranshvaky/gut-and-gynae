@@ -828,8 +828,8 @@ html:not(.js) .amp-svg text{fill-opacity:1;stroke-dashoffset:0;animation:none}
 /* ============ cinematic quote band ============ */
 .band{position:relative;overflow:hidden;min-height:75vh;display:flex;align-items:center;justify-content:center;text-align:center}
 .band-media{position:absolute;inset:-12% 0;z-index:0}
-.band-media video{width:100%;height:100%;object-fit:cover;filter:saturate(.7) brightness(.55);will-change:transform}
-.band-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,46,51,.55),rgba(126,61,80,.45))}
+.band-media video, .band-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.6);will-change:transform}
+.band-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,46,51,.72) 0%,rgba(64,26,37,.72) 100%)}
 .band-content{position:relative;z-index:1;max-width:840px;padding:120px 24px}
 .band-content .eyebrow{color:rgba(255,255,255,.85);justify-content:center}
 .band-content .eyebrow::before{background:linear-gradient(90deg,#7FD4CE,var(--rose-soft))}
@@ -1536,10 +1536,7 @@ html:not(.js) .amp-svg text{fill-opacity:1;stroke-dashoffset:0;animation:none}
 <!-- ================= CINEMATIC BAND ================= -->
 <section class="band">
   <div class="band-media" aria-hidden="true">
-    <video autoplay muted loop playsinline preload="metadata" id="bandVideo" poster="assets/poster-band.jpg">
-      <source src="assets/care-lab.mp4" type="video/mp4">
-      <source src="https://videos.pexels.com/video-files/3195394/3195394-hd_1280_720_25fps.mp4" type="video/mp4">
-    </video>
+    <img src="assets/promise-hands.jpg" alt="Compassionate Care - Our Promise" id="bandMedia" loading="lazy">
   </div>
   <div class="band-content">
     <p class="eyebrow centered" data-reveal>Our Promise</p>
@@ -2234,7 +2231,7 @@ html:not(.js) .amp-svg text{fill-opacity:1;stroke-dashoffset:0;animation:none}
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // ---------- video autoplay nudge ----------
-  var VIDEO_IDS = ['heroVideoL','heroVideoR','bandVideo'];
+  var VIDEO_IDS = ['heroVideoL','heroVideoR'];
   function nudgeVideos(){
     VIDEO_IDS.forEach(function(id){
       var v = document.getElementById(id);
@@ -2426,10 +2423,13 @@ html:not(.js) .amp-svg text{fill-opacity:1;stroke-dashoffset:0;animation:none}
   });
 
   // cinematic band parallax
-  gsap.fromTo('#bandVideo', {yPercent: -9}, {
-    yPercent: 9, ease: 'none',
-    scrollTrigger: {trigger: '.band', start: 'top bottom', end: 'bottom top', scrub: true}
-  });
+  var bandEl = document.getElementById('bandMedia') || document.getElementById('bandVideo');
+  if (bandEl) {
+    gsap.fromTo(bandEl, {yPercent: -9}, {
+      yPercent: 9, ease: 'none',
+      scrollTrigger: {trigger: '.band', start: 'top bottom', end: 'bottom top', scrub: true}
+    });
+  }
 
   // booking steps progress line
   gsap.to('#stepsLine', {
