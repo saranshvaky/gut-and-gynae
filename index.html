@@ -1,0 +1,2735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className += " js";</script>
+<title>Gut &amp; Gynae — Dr Saransh Vakharia &amp; Dr Prapti Shah | GMC Nagpur</title>
+<meta name="description" content="Gut & Gynae — Super-specialized Surgical Gastroenterology by Dr Saransh Vakharia and advanced Obstetrics & Gynaecology by Dr Prapti Shah at Government Medical College (GMC), Nagpur.">
+
+<!-- OpenGraph / Social Media & WhatsApp Link Preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gut &amp; Gynae">
+<meta property="og:title" content="Gut &amp; Gynae — Dr Saransh Vakharia &amp; Dr Prapti Shah">
+<meta property="og:description" content="Surgical Gastroenterology & Advanced Obstetrics & Gynaecology at Government Medical College (GMC), Nagpur. Two specialists, complete patient-first care.">
+<meta property="og:image" content="assets/poster-gut.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Preconnect & Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   GUT & GYNAE — Design Tokens
+   Two-tone identity: Teal = Gut (Dr Saransh), Rose = Gynae (Dr Prapti)
+   ============================================================ */
+:root{
+  --base:        #F6F7F4;
+  --base-deep:   #EDF1EC;
+  --ink:         #22403E;
+  --ink-soft:    #55706C;
+  --teal:        #1E5F63;
+  --teal-deep:   #123F44;
+  --teal-dark:   #0C2E33;
+  --teal-tint:   #E2EDEB;
+  --rose:        #A5566B;
+  --rose-deep:   #7E3D50;
+  --rose-tint:   #F4E9EA;
+  --rose-soft:   #D9A0AE;
+  --whatsapp:    #25D366;
+  --whatsapp-dark:#128C7E;
+  --line:        #D8E0DB;
+  --white:       #FFFFFF;
+  --shadow-sm:   0 1px 2px rgba(34,64,62,.05), 0 4px 12px rgba(34,64,62,.06);
+  --shadow-md:   0 2px 4px rgba(34,64,62,.06), 0 12px 32px rgba(34,64,62,.10);
+  --shadow-lg:   0 4px 8px rgba(18,63,68,.08), 0 24px 64px rgba(18,63,68,.16);
+  --radius:      18px;
+  --font-display:'Marcellus', Georgia, serif;
+  --font-body:   'Figtree', -apple-system, 'Segoe UI', sans-serif;
+  --ease:        cubic-bezier(.22,.61,.36,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html.lenis{scroll-behavior:auto}
+body{
+  font-family:var(--font-body);
+  background:var(--base);
+  color:var(--ink);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.15;letter-spacing:.005em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* word-split reveal plumbing */
+.w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em;margin-bottom:-.08em}
+.wi{display:inline-block;will-change:transform}
+
+/* eyebrow labels */
+.eyebrow{
+  font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-soft);display:flex;align-items:center;gap:12px;
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:linear-gradient(90deg,var(--teal),var(--rose))}
+.eyebrow.centered{justify-content:center}
+.eyebrow.centered::after{content:"";width:28px;height:1px;background:linear-gradient(90deg,var(--rose),var(--teal))}
+
+/* ============ preloader curtain ============ */
+.curtain{position:fixed;inset:0;z-index:1000;display:flex;pointer-events:none}
+.curtain-panel{flex:1;transform-origin:top}
+.curtain-panel.t{background:var(--teal-deep)}
+.curtain-panel.r{background:var(--rose-deep)}
+.curtain-amp{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-size:min(18vw,120px);color:rgba(255,255,255,.9);
+}
+body.no-js .curtain, html.no-gsap .curtain{display:none}
+@keyframes curtainLift{to{transform:scaleY(0)}}
+@keyframes curtainAmpOut{to{opacity:0}}
+.curtain-panel{animation:curtainLift 1s cubic-bezier(.7,0,.3,1) 2.4s forwards}
+.curtain-amp{animation:curtainAmpOut .5s ease 2s forwards}
+html.js .curtain-panel,html.js .curtain-amp{animation:none}
+
+/* ============ scroll progress ============ */
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:210;pointer-events:none}
+.progress-bar{height:100%;width:100%;background:linear-gradient(90deg,var(--teal),var(--rose));transform:scaleX(0);transform-origin:left}
+
+/* ============ nav (Taskbar with What We Treat first) ============ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s var(--ease),box-shadow .3s var(--ease)}
+.nav.scrolled{background:rgba(246,247,244,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav-inner{max-width:1180px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:var(--font-display);font-size:22px;text-decoration:none;display:flex;align-items:baseline;gap:2px;color:var(--ink)}
+.nav.on-dark:not(.scrolled) .logo{color:#fff}
+.logo .amp{font-size:26px;background:linear-gradient(120deg,#2A8C93 40%,var(--rose-soft) 60%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 3px}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;font-size:15px;font-weight:500;color:var(--ink-soft);transition:color .2s}
+.nav.on-dark:not(.scrolled) .nav-links a{color:rgba(255,255,255,.86)}
+.nav-links a:hover{color:var(--ink)}
+.nav.on-dark:not(.scrolled) .nav-links a:hover{color:#fff}
+.nav-links a.btn-primary,.nav-links a.btn-primary:hover{color:#fff}
+
+/* Button styles */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;cursor:pointer;position:relative;
+  font-family:var(--font-body);font-size:15px;font-weight:600;text-decoration:none;
+  padding:13px 26px;border-radius:100px;border:none;
+  transition:box-shadow .25s var(--ease),background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),transform .2s;
+  will-change:transform;
+}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:var(--teal-deep);box-shadow:var(--shadow-md)}
+.btn-secondary{background:var(--rose);color:#fff;box-shadow:var(--shadow-sm)}
+.btn-secondary:hover{background:var(--rose-deep);box-shadow:var(--shadow-md)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink-soft)}
+.btn-light{background:#fff;color:var(--teal-deep);box-shadow:var(--shadow-sm)}
+.btn-light:hover{background:var(--base)}
+.btn-whatsapp{
+  background:#25D366;color:#fff;box-shadow:0 3px 12px rgba(37,211,102,.28);
+}
+.btn-whatsapp:hover{background:#1EBE5D;color:#fff;box-shadow:0 6px 18px rgba(37,211,102,.38)}
+.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.45)}
+.hero .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.nav .btn{padding:9px 20px;font-size:14px}
+
+/* ============ hero (split dual-video, shifted down close to scroll hint) ============ */
+.hero{
+  --seamL:50%;--seamR:50%;
+  min-height:100svh;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;align-items:center;
+  text-align:center;padding:120px 24px 54px;
+}
+.hero-split{position:absolute;inset:-1px;z-index:0;overflow:hidden}
+.hero-panel{position:absolute;inset:0;overflow:hidden;will-change:clip-path}
+.hero-panel video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.1);
+  will-change:transform;
+}
+.hero-panel.gut video{filter:saturate(.7) brightness(.78) contrast(1.02)}
+.hero-panel.gynae video{filter:saturate(.82) brightness(.82)}
+.hero-panel::after{content:"";position:absolute;inset:0}
+.hero-panel.gut::after{
+  background:linear-gradient(180deg,rgba(12,46,51,.45) 0%,rgba(12,46,51,.25) 42%,rgba(12,46,51,.84) 100%),
+             linear-gradient(90deg,rgba(18,63,68,.42),rgba(18,63,68,.18));
+}
+.hero-panel.gynae::after{
+  background:linear-gradient(180deg,rgba(64,26,37,.45) 0%,rgba(64,26,37,.25) 42%,rgba(64,26,37,.84) 100%),
+             linear-gradient(270deg,rgba(126,61,80,.5),rgba(126,61,80,.22));
+}
+.hero-panel.gut{clip-path:polygon(0 0, calc(var(--seamL) + 4%) 0, calc(var(--seamL) - 4%) 100%, 0 100%)}
+.hero-panel.gynae{clip-path:polygon(calc(var(--seamR) + 4%) 0, 100% 0, 100% 100%, calc(var(--seamR) - 4%) 100%)}
+.hero>*:not(.hero-split){position:relative;z-index:2}
+.hero .hero-split{position:absolute;z-index:0}
+
+/* side captions anchoring each half (positioned level with the title) */
+.hero p.hero-side{
+  position:absolute;bottom:145px;z-index:2;
+  font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.9);
+}
+.hero-side small{display:block;margin-top:4px;font-size:13px;font-weight:400;letter-spacing:.04em;text-transform:none;color:rgba(255,255,255,.72)}
+.hero p.hero-side.l{left:5.5%;text-align:left}
+.hero p.hero-side.r{right:5.5%;text-align:right}
+
+.hero-title{
+  font-size:clamp(52px,9.2vw,120px);color:#fff;
+  display:flex;align-items:center;justify-content:center;gap:.05em;flex-wrap:wrap;
+  text-shadow:0 2px 30px rgba(12,46,51,.45);
+  margin-top:0;
+}
+.amp-svg{width:clamp(70px,10.5vw,144px);height:auto;margin:0 .03em;overflow:visible}
+.amp-svg text{
+  font-family:var(--font-display);font-size:130px;
+  stroke:url(#ampGradient);stroke-width:1.6;fill:url(#ampGradient);
+  fill-opacity:0;stroke-dasharray:900;stroke-dashoffset:900;
+}
+.hero.loaded .amp-svg text{animation:ampDraw 2.4s var(--ease) .9s forwards}
+html:not(.js) .amp-svg text{fill-opacity:1;stroke-dashoffset:0;animation:none}
+@keyframes ampDraw{
+  0%{stroke-dashoffset:900;fill-opacity:0}
+  60%{stroke-dashoffset:0;fill-opacity:0}
+  100%{stroke-dashoffset:0;fill-opacity:1}
+}
+
+/* Two-line hero subtitle: Line 1 in single line on desktop, Line 2 under it */
+.hero-sub{
+  max-width:980px;margin:14px auto 0;
+  font-size:clamp(15.5px,1.75vw,18.5px);color:rgba(255,255,255,.94);
+  line-height:1.55;display:flex;flex-direction:column;gap:3px;
+}
+.hero-sub-line1{
+  display:block;white-space:nowrap;
+}
+.hero-sub-line2{
+  display:block;color:rgba(255,255,255,.88);font-size:0.95em;
+}
+@media (max-width:940px){
+  .hero-sub-line1{white-space:normal}
+}
+.hero-sub strong{color:#fff;font-weight:600}
+
+/* Hero CTA buttons: sitting close above the scroll hint */
+.hero-ctas{
+  display:flex;gap:14px;margin-top:22px;margin-bottom:12px;flex-wrap:wrap;justify-content:center;
+  position:relative;z-index:10;pointer-events:auto!important;
+}
+
+.hero .scroll-hint{
+  position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
+  color:rgba(255,255,255,.75);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+}
+.scroll-hint .line{width:1px;height:26px;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent);overflow:hidden;position:relative}
+.scroll-hint .line::after{content:"";position:absolute;left:0;top:-100%;width:100%;height:100%;background:#fff;animation:lineDrop 2s var(--ease) infinite}
+
+/* ============ marquee ============ */
+.marquee{
+  background:var(--teal-dark);color:rgba(255,255,255,.88);overflow:hidden;
+  padding:18px 0;position:relative;z-index:3;
+}
+.marquee-track{display:flex;gap:0;width:max-content;will-change:transform;animation:marquee 32s linear infinite}
+.marquee-chunk{display:flex;align-items:center;white-space:nowrap;font-family:var(--font-display);font-size:19px;letter-spacing:.06em}
+.marquee-chunk span{padding:0 26px}
+.marquee-chunk .dot{color:var(--rose-soft);padding:0}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee:hover .marquee-track{animation-play-state:paused}
+
+/* ============ intro statement ============ */
+.intro{padding:110px 24px 70px;background:var(--base)}
+.intro-inner{max-width:840px;margin:0 auto;text-align:center}
+.intro h2{font-size:clamp(30px,4.4vw,46px);margin-top:24px}
+.intro h2 em{font-style:normal;background:linear-gradient(100deg,var(--teal),var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
+.intro p{margin-top:22px;color:var(--ink-soft);font-size:18px;max-width:680px;margin-left:auto;margin-right:auto}
+
+/* ============ 1. WHAT WE TREAT (FIRST SECTION) ============ */
+.services{padding:90px 24px 110px;background:var(--base-deep);overflow:hidden}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;max-width:1080px;margin:0 auto}
+.svc-col h3{font-size:24px;display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.svc-col .svc-sub{color:var(--ink-soft);font-size:15.5px;margin-bottom:24px}
+.svc-icon{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.svc-col.gut .svc-icon{background:var(--teal-tint)}
+.svc-col.gynae .svc-icon{background:var(--rose-tint)}
+.svc-col.gut .svc-icon svg{stroke:var(--teal)}
+.svc-col.gynae .svc-icon svg{stroke:var(--rose)}
+.svc-items{display:flex;flex-direction:column;gap:14px}
+.svc-card{
+  background:var(--white);border-radius:16px;padding:20px 22px;
+  box-shadow:0 1px 3px rgba(34,64,62,.04);
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+  border-left:3px solid transparent;
+}
+.svc-card:hover{transform:translateX(5px);box-shadow:var(--shadow-sm)}
+.svc-col.gut .svc-card{border-left-color:var(--teal)}
+.svc-col.gynae .svc-card{border-left-color:var(--rose)}
+.svc-card-title{
+  font-size:16px;font-weight:700;display:flex;align-items:center;gap:12px;color:var(--ink);line-height:1.35;
+}
+.svc-card.is-clickable#card-gallbladder{
+  padding:16px 20px 12px;
+}
+.svc-card-main{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+}
+.svc-card-thumb{
+  width:68px;
+  height:68px;
+  border-radius:12px;
+  object-fit:cover;
+  flex-shrink:0;
+  border:1px solid rgba(34,64,62,.15);
+  box-shadow:0 2px 6px rgba(34,64,62,.08);
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.svc-card:hover .svc-card-thumb{
+  transform:scale(1.05);
+  box-shadow:0 4px 12px rgba(30,95,99,.25);
+}
+.svc-card-text{
+  flex:1;
+  min-width:0;
+}
+.svc-card-text .svc-card-title{
+  font-size:16px;
+  font-weight:700;
+  color:var(--ink);
+  line-height:1.3;
+}
+.svc-card-text .svc-card-desc{
+  margin-top:4px;
+  font-size:13.5px;
+  color:var(--ink-soft);
+  line-height:1.48;
+}
+.svc-card-desc{
+  font-size:14px;color:var(--ink-soft);margin-top:6px;line-height:1.55;
+}
+
+/* Interactive Service Card */
+.svc-card.is-clickable{
+  cursor: pointer;
+  position: relative;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease);
+  outline: none;
+}
+.svc-card.is-clickable:hover,
+.svc-card.is-clickable:focus-visible{
+  transform: translateY(-2px) translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--teal) !important;
+  background: #FDFFFC;
+}
+.svc-card-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.svc-pill-guide{
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  background: var(--teal-tint);
+  padding: 4px 10px;
+  border-radius: 100px;
+  transition: background .2s, color .2s, transform .2s;
+}
+.svc-card.is-clickable:hover .svc-pill-guide{
+  background: var(--teal);
+  color: #fff;
+  transform: scale(1.04);
+}
+.svc-card-actions{
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed rgba(34,64,62,.15);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.svc-action-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--teal);
+  transition: color .2s, transform .2s;
+}
+.svc-action-link:hover{
+  color: var(--teal-deep);
+  text-decoration: underline;
+}
+.svc-action-link.secondary{
+  color: var(--ink-soft);
+  margin-left: auto;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(34,64,62,.04);
+  transition: background .2s, color .2s;
+}
+.svc-action-link.secondary:hover{
+  color: var(--teal-deep);
+  background: var(--teal-tint);
+  text-decoration: none;
+}
+.svc-col.gynae .svc-action-link{
+  color: var(--rose);
+}
+.svc-col.gynae .svc-action-link:hover{
+  color: var(--rose-deep);
+}
+.svc-col.gynae .svc-action-link.secondary:hover{
+  color: var(--rose-deep);
+  background: var(--rose-tint);
+}
+.svc-col.gynae .svc-card:hover .svc-card-thumb{
+  box-shadow: 0 4px 12px rgba(184,80,106,.25);
+}
+
+/* Gynae theme for popup modal */
+.modal-dialog.gynae-mode .modal-head{
+  background: linear-gradient(135deg, #401A25 0%, var(--rose-deep) 100%);
+}
+.modal-dialog.gynae-mode .modal-eyebrow{
+  color: #FFD1DC;
+}
+.modal-dialog.gynae-mode .modal-eyebrow::before{
+  background: #FFD1DC;
+}
+.modal-dialog.gynae-mode .modal-tab-btn:hover{
+  color: var(--rose);
+}
+.modal-dialog.gynae-mode .modal-tab-btn.is-active{
+  color: var(--rose-deep);
+  border-bottom-color: var(--rose);
+}
+.modal-dialog.gynae-mode .modal-callout{
+  border-left-color: var(--rose);
+}
+.modal-dialog.gynae-mode .modal-callout h5{
+  color: var(--rose-deep);
+}
+.modal-dialog.gynae-mode .modal-list li svg path,
+.modal-dialog.gynae-mode .modal-list li svg polyline{
+  stroke: var(--rose);
+}
+.modal-dialog.gynae-mode .modal-page-link:hover{
+  color: var(--rose-deep);
+}
+
+/* ============ CLINICAL CONDITION MODAL (IN-PAGE POPUP) ============ */
+.modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 46, 51, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .28s var(--ease);
+}
+.modal-backdrop.is-open{
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-dialog{
+  background: #FFFFFF;
+  border-radius: 20px;
+  max-width: 660px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(12, 46, 51, 0.35);
+  overflow: hidden;
+  transform: translateY(24px) scale(0.96);
+  transition: transform .3s cubic-bezier(.22,.61,.36,1);
+  border: 1px solid rgba(216, 224, 219, 0.8);
+}
+.modal-backdrop.is-open .modal-dialog{
+  transform: translateY(0) scale(1);
+}
+.modal-head{
+  background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-deep) 100%);
+  color: #fff;
+  padding: 24px 28px 20px;
+  position: relative;
+  flex-shrink: 0;
+}
+.modal-eyebrow{
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #9fe0dc;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.modal-eyebrow::before{
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  background: #9fe0dc;
+}
+.modal-title{
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: #fff;
+  line-height: 1.25;
+}
+.modal-doctor-sub{
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.82);
+  margin-top: 4px;
+}
+.modal-close-btn{
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.modal-close-btn:hover{
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Modal Tabs */
+.modal-tabs{
+  display: flex;
+  border-bottom: 1px solid var(--line);
+  background: var(--base);
+  padding: 8px 18px 0;
+  gap: 8px;
+  overflow-x: auto;
+  flex-shrink: 0;
+  -webkit-overflow-scrolling: touch;
+}
+.modal-tab-btn{
+  background: none;
+  border: none;
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color .2s, border-color .2s;
+  white-space: nowrap;
+}
+.modal-tab-btn:hover{
+  color: var(--teal);
+}
+.modal-tab-btn.is-active{
+  color: var(--teal-deep);
+  border-bottom-color: var(--teal);
+  background: #fff;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Modal Body */
+.modal-body{
+  padding: 22px 28px;
+  overflow-y: auto;
+  flex: 1;
+  background: #FFFFFF;
+}
+.modal-panel{
+  display: none;
+}
+.modal-panel.is-active{
+  display: block;
+  animation: fadeInModal .25s ease-out;
+}
+@keyframes fadeInModal{
+  from{ opacity: 0; transform: translateY(6px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+.modal-section-title{
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.modal-text{
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.modal-list{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.modal-list li{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.modal-list li svg{
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.modal-callout{
+  background: var(--base-deep);
+  border-left: 3.5px solid var(--teal);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 14px 0;
+}
+.modal-callout.alert{
+  border-left-color: #DC2626;
+  background: #FEF2F2;
+}
+.modal-callout h5{
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--teal-deep);
+}
+.modal-callout.alert h5{
+  color: #B91C1C;
+}
+
+/* Modal Footer */
+.modal-foot{
+  background: var(--base);
+  border-top: 1px solid var(--line);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+.modal-foot-actions{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.modal-btn-wa{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--whatsapp);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 100px;
+  box-shadow: 0 2px 8px rgba(37,211,102,.25);
+  transition: transform .2s, box-shadow .2s;
+  text-decoration: none;
+}
+.modal-btn-wa:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37,211,102,.35);
+  color: #fff;
+}
+.modal-btn-book{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  color: var(--teal-deep);
+  border: 1px solid var(--line);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+.modal-btn-book:hover{
+  background: var(--teal-tint);
+  border-color: var(--teal);
+}
+.modal-page-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--teal);
+  text-decoration: none;
+  transition: color .2s, transform .2s;
+}
+.modal-page-link:hover{
+  color: var(--teal-deep);
+  transform: translateX(2px);
+  text-decoration: underline;
+}
+@media (max-width: 600px){
+  .modal-dialog{max-height: 94vh; border-radius: 16px;}
+  .modal-head{padding: 18px 20px;}
+  .modal-body{padding: 18px 20px;}
+  .modal-foot{flex-direction: column; align-items: stretch;}
+  .modal-foot-actions{flex-direction: column; width: 100%;}
+  .modal-foot-actions .modal-btn-wa, .modal-foot-actions .modal-btn-book{width: 100%; justify-content: center;}
+  .modal-page-link{justify-content: center; text-align: center; margin-top: 4px;}
+}
+
+/* ============ 2. THE DOCTORS (FOLLOWING SECTION, SYMMETRICALLY ALIGNED) ============ */
+.doctors{padding:110px 24px 120px;background:var(--base);overflow:hidden}
+.section-head{text-align:center;max-width:700px;margin:0 auto 60px}
+.section-head h2{font-size:clamp(32px,4.6vw,48px);margin-top:18px}
+.section-head p{margin-top:14px;color:var(--ink-soft)}
+.doctor-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1080px;margin:0 auto;position:relative}
+
+.doctor-card{
+  background:var(--white);border-radius:var(--radius);padding:44px 38px 40px;
+  box-shadow:var(--shadow-sm);border-top:4px solid;position:relative;
+  transition:box-shadow .35s var(--ease);transform-style:preserve-3d;will-change:transform;
+  display:flex;flex-direction:column;height:100%;
+}
+.doctor-card:hover{box-shadow:var(--shadow-lg)}
+.doctor-card.gut{border-color:var(--teal)}
+.doctor-card.gynae{border-color:var(--rose)}
+
+/* Photo container */
+.portrait-container{position:relative;width:120px;height:120px;margin-bottom:24px}
+.portrait-img{
+  width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);border:3px solid var(--white);
+}
+.portrait-fallback{
+  width:120px;height:120px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-size:38px;color:#fff;position:relative;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
+}
+.gut .portrait-fallback{background:linear-gradient(140deg,#2A7278,var(--teal-deep))}
+.gynae .portrait-fallback{background:linear-gradient(140deg,#B96A7E,var(--rose-deep))}
+.portrait-container::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:1.5px dashed;opacity:.5;animation:ringSpin 24s linear infinite;pointer-events:none}
+@keyframes ringSpin{to{transform:rotate(360deg)}}
+.gut .portrait-container::after{border-color:var(--teal)}
+.gynae .portrait-container::after{border-color:var(--rose)}
+
+.doctor-tag{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.gut .doctor-tag{color:var(--teal)}
+.gynae .doctor-tag{color:var(--rose)}
+
+.doctor-card h3{font-size:28px;min-height:34px}
+
+/* Symmetrical 2-line Role */
+.doctor-role{
+  font-weight:600;font-size:15.5px;margin-top:6px;
+  display:flex;flex-direction:column;gap:2px;min-height:50px;
+}
+.gut .doctor-role{color:var(--teal-deep)}
+.gynae .doctor-role{color:var(--rose-deep)}
+.role-line{line-height:1.35}
+
+/* Symmetrical Multi-line Degrees */
+.doctor-cred{
+  font-size:13.5px;color:var(--ink-soft);letter-spacing:.01em;margin-top:8px;
+  font-weight:500;line-height:1.45;
+  display:flex;flex-direction:column;gap:3px;
+  min-height:98px;
+}
+.cred-line{line-height:1.45}
+
+/* Symmetrical Highlighted Badges (Pills) */
+.badge-list{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;
+  min-height:34px;align-items:flex-start;
+}
+.badge-pill{
+  font-size:12px;font-weight:600;padding:4px 11px;border-radius:100px;letter-spacing:.02em;
+}
+.gut .badge-pill{background:var(--teal-tint);color:var(--teal-deep);border:1px solid rgba(30,95,99,.15)}
+.gynae .badge-pill{background:var(--rose-tint);color:var(--rose-deep);border:1px solid rgba(165,86,107,.15)}
+
+/* Symmetrical Bio */
+.doctor-bio{
+  margin-top:16px;color:var(--ink);font-size:15px;line-height:1.6;
+  min-height:96px;
+}
+
+/* Symmetrical Care List */
+.care-list{
+  margin-top:20px;list-style:none;display:flex;flex-direction:column;gap:10px;
+  min-height:156px;
+}
+.care-list li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--ink);line-height:1.45}
+.care-list svg{flex-shrink:0;margin-top:3px}
+.gut .care-list svg{stroke:var(--teal)}
+.gynae .care-list svg{stroke:var(--rose)}
+
+/* Action Buttons anchored at the bottom */
+.doctor-actions{
+  margin-top:auto;padding-top:24px;display:flex;gap:12px;
+}
+.doctor-actions .btn{
+  width:100%;justify-content:center;padding:12px 22px;font-size:14.5px;font-weight:600;border-radius:100px;
+}
+
+.grid-amp{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:54px;height:54px;border-radius:50%;
+  box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-size:26px;z-index:2;
+  background-image:linear-gradient(var(--base),var(--base)),linear-gradient(120deg,var(--teal),var(--rose));
+  background-origin:border-box;background-clip:padding-box,border-box;
+  border:2px solid transparent;
+}
+.grid-amp span{background:linear-gradient(120deg,var(--teal) 40%,var(--rose) 60%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ============ cinematic quote band ============ */
+.band{position:relative;overflow:hidden;min-height:75vh;display:flex;align-items:center;justify-content:center;text-align:center}
+.band-media{position:absolute;inset:-12% 0;z-index:0}
+.band-media video{width:100%;height:100%;object-fit:cover;filter:saturate(.7) brightness(.55);will-change:transform}
+.band-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,46,51,.55),rgba(126,61,80,.45))}
+.band-content{position:relative;z-index:1;max-width:840px;padding:120px 24px}
+.band-content .eyebrow{color:rgba(255,255,255,.85);justify-content:center}
+.band-content .eyebrow::before{background:linear-gradient(90deg,#7FD4CE,var(--rose-soft))}
+.band-content .eyebrow.centered::after{background:linear-gradient(90deg,var(--rose-soft),#7FD4CE)}
+.band-quote{font-family:var(--font-display);font-size:clamp(28px,4.6vw,52px);color:#fff;line-height:1.25;margin-top:26px;text-shadow:0 2px 24px rgba(12,46,51,.4)}
+.band-credit{margin-top:24px;color:rgba(255,255,255,.8);font-size:15px;letter-spacing:.08em}
+
+/* ============ FAQs section ============ */
+.faqs{padding:120px 24px;background:var(--base);overflow:hidden}
+.faq-list{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.faq-item{
+  background:var(--white);border-radius:16px;border:1.5px solid var(--line);
+  box-shadow:var(--shadow-sm);overflow:hidden;transition:border-color .2s,box-shadow .2s;
+}
+.faq-item.active{border-color:var(--teal);box-shadow:var(--shadow-md)}
+.faq-question{
+  width:100%;text-align:left;background:none;border:none;padding:22px 26px;
+  font-family:var(--font-body);font-size:17px;font-weight:600;color:var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:18px;cursor:pointer;
+}
+.faq-question:hover{color:var(--teal)}
+.faq-icon{
+  width:28px;height:28px;border-radius:50%;background:var(--base-deep);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:transform .3s var(--ease),background .2s;
+}
+.faq-item.active .faq-icon{transform:rotate(180deg);background:var(--teal);color:#fff}
+.faq-item.active .faq-icon svg{stroke:#fff}
+.faq-answer{
+  max-height:0;overflow:hidden;transition:max-height .35s var(--ease);
+}
+.faq-answer-inner{
+  padding:0 26px 22px;color:var(--ink-soft);font-size:15.5px;line-height:1.65;
+}
+
+/* ============ booking ============ */
+.booking{padding:120px 24px;overflow:hidden}
+.steps-wrap{max-width:940px;margin:0 auto 70px;position:relative}
+.steps-line{
+  position:absolute;top:18px;left:6%;right:6%;height:2px;z-index:0;
+  background:var(--line);border-radius:2px;overflow:hidden;
+}
+.steps-line-fill{height:100%;width:100%;background:linear-gradient(90deg,var(--teal),var(--rose));transform:scaleX(0);transform-origin:left}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;z-index:1}
+.step{text-align:left;padding:0 8px}
+.step-num{
+  font-family:var(--font-display);font-size:15px;width:38px;height:38px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:#fff;
+  box-shadow:var(--shadow-sm);
+}
+.step:nth-child(1) .step-num{background:var(--teal)}
+.step:nth-child(2) .step-num{background:linear-gradient(120deg,var(--teal),var(--rose))}
+.step:nth-child(3) .step-num{background:var(--rose)}
+.step h4{font-family:var(--font-body);font-weight:600;font-size:17.5px}
+.step p{margin-top:8px;color:var(--ink-soft);font-size:15px}
+
+.form-card{
+  max-width:740px;margin:0 auto;background:var(--white);border-radius:24px;
+  padding:48px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden;
+}
+.form-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--teal),var(--rose))}
+.form-card h3{font-size:27px;text-align:center}
+.form-card .form-sub{text-align:center;color:var(--ink-soft);font-size:15.5px;margin:10px 0 32px}
+
+/* Instant WhatsApp card inside booking */
+.whatsapp-banner{
+  background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(18,140,126,.05));
+  border:1.5px solid rgba(37,211,102,.3);border-radius:16px;
+  padding:18px 22px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.whatsapp-banner-text h4{font-size:16px;font-weight:700;color:#0B6047}
+.whatsapp-banner-text p{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+.whatsapp-banner .btn{flex-shrink:0;padding:10px 18px;font-size:14px}
+
+.choose-doctor{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.doc-option{position:relative}
+.doc-option input{position:absolute;opacity:0;inset:0}
+.doc-option label{
+  display:flex;flex-direction:column;gap:3px;cursor:pointer;
+  border:1.5px solid var(--line);border-radius:14px;padding:16px 18px;
+  transition:border-color .2s,background .2s,box-shadow .2s,transform .2s;
+}
+.doc-option label:hover{transform:translateY(-2px)}
+.doc-option .doc-name{font-weight:600;font-size:15.5px}
+.doc-option .doc-for{font-size:13.5px;color:var(--ink-soft)}
+.doc-option input:checked+label{box-shadow:var(--shadow-sm)}
+.doc-option.gut input:checked+label{border-color:var(--teal);background:var(--teal-tint)}
+.doc-option.gynae input:checked+label{border-color:var(--rose);background:var(--rose-tint)}
+.doc-option input:focus-visible+label{outline:3px solid var(--teal);outline-offset:2px}
+
+.field{margin-bottom:20px}
+.field label{display:block;font-size:14px;font-weight:600;margin-bottom:7px}
+.field label .req{color:var(--rose)}
+.field label .opt{font-weight:400;color:var(--ink-soft)}
+.field input,.field textarea{
+  width:100%;padding:13px 16px;border:1.5px solid var(--line);border-radius:12px;
+  font-family:var(--font-body);font-size:15.5px;color:var(--ink);background:var(--base);
+  transition:border-color .2s,box-shadow .2s;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(30,95,99,.12)}
+.field textarea{resize:vertical;min-height:94px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-error{display:none;color:#B3261E;font-size:13.5px;margin-top:5px}
+.form-error.show{display:block}
+
+.form-buttons{display:grid;grid-template-columns:1.2fr 1fr;gap:14px;margin-top:10px}
+.form-buttons .btn{justify-content:center;padding:15px 20px;font-size:15.5px}
+
+.form-success-box{
+  display:none;padding:24px;border-radius:16px;background:var(--teal-tint);border:1.5px solid var(--teal);
+  color:var(--teal-deep);margin-top:20px;text-align:center;
+}
+.form-success-box.show{display:block}
+.form-success-box h4{font-size:19px;font-weight:700}
+.form-success-box p{margin-top:8px;font-size:15px;color:var(--ink)}
+.form-success-actions{margin-top:16px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+.form-note{text-align:center;font-size:14px;color:var(--ink-soft);margin-top:22px}
+.form-note a{color:var(--teal);font-weight:600;text-decoration:none}
+.form-note a:hover{text-decoration:underline}
+
+/* ============ location ============ */
+.location{padding:130px 24px;background:var(--teal-dark);color:#EAF2F0;position:relative;overflow:hidden}
+.loc-amp{
+  position:absolute;right:-50px;bottom:-140px;font-family:var(--font-display);
+  font-size:460px;line-height:1;color:rgba(255,255,255,.05);pointer-events:none;will-change:transform;
+}
+.loc-aurora{
+  position:absolute;left:-15%;top:-30%;width:70%;height:120%;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(42,140,147,.25),transparent 65%);
+  filter:blur(60px);animation:aurora 14s ease-in-out infinite alternate;
+}
+@keyframes aurora{from{transform:translate(0,0) scale(1)}to{transform:translate(12%,10%) scale(1.15)}}
+.location .eyebrow{color:#9FBFBB}
+.location .eyebrow::before{background:linear-gradient(90deg,#7FB5B0,var(--rose-soft))}
+.loc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;max-width:1080px;margin:0 auto;align-items:center;position:relative;z-index:1}
+.loc-grid h2{font-size:clamp(30px,4.2vw,44px);margin-top:20px;color:#fff}
+.loc-grid>div:first-child>p{margin-top:16px;color:#B9CFCB;font-size:16.5px;line-height:1.6}
+.loc-details{display:flex;flex-direction:column;gap:22px}
+.loc-item{display:flex;gap:16px;align-items:flex-start}
+.loc-item svg{flex-shrink:0;margin-top:3px;stroke:#8FC1BB}
+.loc-item .loc-label{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8FB5B0}
+.loc-item .loc-value{font-size:16px;color:#EAF2F0;margin-top:3px}
+.loc-item a{color:#EAF2F0;text-decoration:none}
+.loc-item a:hover{text-decoration:underline}
+.loc-details .btn{margin-top:8px;align-self:flex-start}
+
+/* ============ footer ============ */
+.footer{padding:80px 24px 70px;text-align:center;overflow:hidden}
+.footer-logo{
+  font-family:var(--font-display);font-size:clamp(48px,9vw,110px);line-height:1.1;
+  display:flex;justify-content:center;align-items:baseline;gap:.04em;color:var(--ink);
+}
+.footer-logo .amp{background:linear-gradient(120deg,var(--teal) 40%,var(--rose) 60%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.footer p{color:var(--ink-soft);font-size:14.5px;margin-top:18px}
+.footer .fine{margin-top:20px;font-size:13px;opacity:.75}
+
+/* ============ sticky mobile action bar ============ */
+.mobile-action-bar{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;
+  background:rgba(246,247,244,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);padding:10px 16px;box-shadow:0 -4px 18px rgba(34,64,62,.1);
+}
+.mobile-action-bar .btn{
+  flex:1;padding:12px 14px;font-size:14px;justify-content:center;box-shadow:none;
+}
+
+/* ============ responsive: tablet ============ */
+@media (max-width:880px){
+  .hero-panel.gut{clip-path:polygon(0 0, 100% 0, 100% calc(var(--seamL) - 3%), 0 calc(var(--seamL) + 3%))}
+  .hero-panel.gynae{clip-path:polygon(0 calc(var(--seamR) + 3%), 100% calc(var(--seamR) - 3%), 100% 100%, 0 100%)}
+  .hero p.hero-side{display:none}
+  .doctor-grid,.svc-grid,.loc-grid{grid-template-columns:1fr}
+  .grid-amp{position:static;transform:none;margin:-6px auto}
+  .steps{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+  .steps-line{display:none}
+  .loc-grid{gap:44px}
+  .nav-links li:not(.nav-cta){display:none}
+  .nav-links{gap:0}
+  .form-card{padding:34px 24px}
+  .field-row,.choose-doctor,.form-buttons{grid-template-columns:1fr}
+  .whatsapp-banner{flex-direction:column;align-items:flex-start}
+  .band{min-height:60vh}
+  .mobile-action-bar{display:flex;gap:10px}
+}
+
+/* ============ responsive: phone ============ */
+@media (max-width:620px){
+  .intro{padding:64px 20px 44px}
+  .services{padding:60px 20px 70px}
+  .doctors{padding:70px 20px 60px}
+  .faqs{padding:60px 20px}
+  .booking{padding:60px 20px 80px}
+  .location{padding:70px 20px}
+  .footer{padding:60px 20px 80px}
+
+  .nav-inner{padding:14px 18px}
+  .logo{font-size:20px}
+  .nav .btn{padding:9px 15px;font-size:13px}
+
+  .hero{padding:116px 20px 60px;text-align:center}
+  .hero-title{font-size:clamp(50px,15vw,72px);gap:.02em}
+  .amp-svg{width:clamp(58px,13vw,76px)}
+  .hero-sub{font-size:16.5px;line-height:1.55;margin-top:16px}
+  .hero-ctas{margin-top:22px;margin-bottom:10px;flex-direction:column;width:100%;gap:10px}
+  .hero-ctas .btn{width:100%;justify-content:center;padding:14px 20px;font-size:15.5px}
+
+  .doctor-grid{gap:24px}
+  .doctor-card{padding:32px 24px 28px}
+  .portrait-container{width:100px;height:100px;margin-bottom:20px}
+  .portrait-fallback{width:100px;height:100px;font-size:32px}
+  .doctor-card h3{font-size:25px}
+
+  .svc-grid{gap:20px}
+  .form-card{padding:28px 20px;border-radius:20px}
+  .form-card h3{font-size:23px}
+  .faq-question{padding:18px 20px;font-size:16px}
+  .faq-answer-inner{padding:0 20px 18px;font-size:15px}
+}
+
+/* ============ reduced motion ============ */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+  .amp-svg text{stroke-dashoffset:0;fill-opacity:1;animation:none}
+  .marquee-track{animation:none}
+  .hero-panel video,.band-media video{display:none}
+  .hero-panel.gut{background:linear-gradient(160deg,var(--teal-deep),var(--teal-dark))}
+  .hero-panel.gynae{background:linear-gradient(200deg,var(--rose-deep),#401A25)}
+  .band-media{background:linear-gradient(160deg,var(--teal-deep),var(--rose-deep))}
+}
+</style>
+</head>
+<body>
+
+<!-- preloader curtain -->
+<div class="curtain" id="curtain" aria-hidden="true">
+  <div class="curtain-panel t"></div>
+  <div class="curtain-panel r"></div>
+  <div class="curtain-amp" id="curtainAmp">&amp;</div>
+</div>
+
+<!-- scroll progress -->
+<div class="progress" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+
+<!-- ================= NAV (UPPERMOST TASKBAR: What We Treat comes first) ================= -->
+<nav class="nav on-dark" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#top" aria-label="Gut and Gynae — home">Gut<span class="amp">&amp;</span>Gynae</a>
+    <ul class="nav-links">
+      <li><a href="#services">What We Treat</a></li>
+      <li><a href="#doctors">The Doctors</a></li>
+      <li><a href="#faqs">FAQs</a></li>
+      <li><a href="#location">Find Us</a></li>
+      <li class="nav-cta"><a class="btn btn-primary magnetic" href="#book">Book Consultation</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="hero-split" aria-hidden="true">
+    <div class="hero-panel gut">
+      <video autoplay muted loop playsinline preload="auto" id="heroVideoL" poster="assets/poster-gut.jpg">
+        <source src="assets/hero-laparoscopy.mp4" type="video/mp4">
+        <source src="https://videos.pexels.com/video-files/3197700/3197700-sd_960_540_25fps.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-panel gynae">
+      <video autoplay muted loop playsinline preload="auto" id="heroVideoR" poster="assets/poster-gynae.jpg">
+        <source src="assets/hero-newborn.mp4" type="video/mp4">
+        <source src="https://videos.pexels.com/video-files/7918429/7918429-hd_1280_720_25fps.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <p class="hero-side l" data-load="4">The Gut<small id="c-side-saransh">Dr Saransh Vakharia</small></p>
+  <p class="hero-side r" data-load="4">The Gynae<small id="c-side-prapti">Dr Prapti Shah</small></p>
+
+  <h1 class="hero-title" aria-label="Gut and Gynae">
+    <span class="w"><span class="wi" data-load-word>Gut</span></span>
+    <svg class="amp-svg" viewBox="0 0 100 130" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="ampGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="35%" stop-color="#8FE3DD"/>
+          <stop offset="65%" stop-color="#E8B7C3"/>
+        </linearGradient>
+      </defs>
+      <text x="50" y="104" text-anchor="middle">&amp;</text>
+    </svg>
+    <span class="w"><span class="wi" data-load-word>Gynae</span></span>
+  </h1>
+
+  <p class="hero-sub" data-load="2" id="c-hero-tagline">
+    <span class="hero-sub-line1">Surgical gastroenterology by <strong>Dr&nbsp;Saransh&nbsp;Vakharia</strong>. Obstetrics &amp; Gynaecology by <strong>Dr&nbsp;Prapti&nbsp;Shah</strong>.</span>
+    <span class="hero-sub-line2">Two specialists dedicated to advanced, patient-first care.</span>
+  </p>
+
+  <div class="hero-ctas" data-load="3">
+    <a class="btn btn-whatsapp magnetic js-hero-wa" href="#book" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.07-1.701-.369-1.284-.528-2.115-1.83-2.179-1.915-.064-.085-.515-.688-.515-1.313s.328-.934.444-1.058c.116-.124.254-.155.339-.155.085 0 .17 0 .244.005.078.005.182-.03.285.219.106.254.36 877.392.941.032.064.053.138.01.222-.042.085-.064.138-.128.212-.064.074-.135.166-.192.223-.064.064-.131.134-.057.261.074.127.329.544.706.879.486.432.896.565 1.023.629.127.064.202.053.276-.032.074-.085.318-.371.403-.498.085-.127.17-.106.286-.064.116.042.741.35 868.413.127.064.212.096.244.149.032.053.032.308-.112.713zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.98-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+      Book via WhatsApp
+    </a>
+    <a class="btn btn-primary magnetic" href="#book">Request Consultation</a>
+    <a class="btn btn-ghost magnetic" href="#services">What We Treat</a>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true"><span>Scroll</span><span class="line"></span></div>
+</header>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-chunk">
+      <span>Surgical Gastroenterology</span><span class="dot">&amp;</span>
+      <span>Obstetrics · Gynaecology</span><span class="dot">&amp;</span>
+      <span id="c-marquee-loc">GMC Nagpur, Maharashtra</span><span class="dot">&amp;</span>
+      <span>Two Super-Specialists, Complete Care</span><span class="dot">&amp;</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= INTRO ================= -->
+<section class="intro">
+  <div class="intro-inner">
+    <p class="eyebrow centered" data-reveal>One Family, Comprehensive Care</p>
+    <h2 data-split>Digestive health and women's health, <em>under one roof.</em></h2>
+    <p data-reveal>
+      Whether it's persistent abdominal pain, a complex gastrointestinal surgery you've been advised,
+      a pregnancy you are celebrating, or fertility questions you've been carrying — you will find
+      two super-specialists committed to clinical precision, conservative management, and sincere empathy.
+    </p>
+  </div>
+</section>
+
+<!-- ================= 1. WHAT WE TREAT (PLACED FIRST) ================= -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow centered" data-reveal>What We Treat</p>
+      <h2 data-split>Bring us the concern. We'll bring the plan.</h2>
+      <p data-reveal>Structured clinical care across the entire spectrum of surgical gastroenterology and women's health.</p>
+    </div>
+
+    <div class="svc-grid">
+      <!-- GUT SERVICES -->
+      <div class="svc-col gut" data-from="left">
+        <h3>
+          <span class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h4a4 4 0 0 1 4 4v3a6 6 0 0 1-6 6H9a5 5 0 0 1 0-10h2"/><path d="M9 21v-5"/></svg></span>
+          Digestive &amp; Surgical Care
+        </h3>
+        <p class="svc-sub" id="c-svcsub-saransh">With Dr Saransh Vakharia (MCh Surgical Gastroenterology)</p>
+        <div class="svc-items" data-stagger id="c-saransh-services">
+          <div class="svc-card is-clickable" id="card-gallbladder" role="button" tabindex="0" aria-haspopup="dialog" title="Click to view quick guide or see details" data-doc="saransh" data-svc-id="gallbladder">
+            <div class="svc-card-main">
+              <img src="assets/thumb-gallbladder.jpg" alt="Gallbladder & Biliary Disease" class="svc-card-thumb" width="68" height="68" loading="lazy">
+              <div class="svc-card-text">
+                <div class="svc-card-title">Gallbladder &amp; Biliary Disease</div>
+                <div class="svc-card-desc">Laparoscopic cholecystectomy for gallstones, CBD stone exploration, bile duct strictures &amp; biliary colic.</div>
+              </div>
+            </div>
+            <div class="svc-card-actions">
+              <span class="svc-action-link svc-action-modal">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Quick Guide &blacktriangledown;
+              </span>
+              <a href="gallbladder.html" class="svc-action-link secondary" onclick="event.stopPropagation();" title="View details on standalone page">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                See details &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="svc-card is-clickable" id="card-pancreas-liver" role="button" tabindex="0" aria-haspopup="dialog" title="Click to view quick guide or see details" data-doc="saransh" data-svc-id="pancreas-liver">
+            <div class="svc-card-main">
+              <img src="assets/thumb-pancreas-liver.jpg" alt="Pancreas & Liver Disorders" class="svc-card-thumb" width="68" height="68" loading="lazy">
+              <div class="svc-card-text">
+                <div class="svc-card-title">Pancreas &amp; Liver Disorders</div>
+                <div class="svc-card-desc">Management of acute &amp; chronic pancreatitis, pancreatic pseudocysts, cystic tumors, and liver lesions.</div>
+              </div>
+            </div>
+            <div class="svc-card-actions">
+              <span class="svc-action-link svc-action-modal">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Quick Guide &blacktriangledown;
+              </span>
+              <a href="pancreas-liver.html" class="svc-action-link secondary" onclick="event.stopPropagation();" title="View details on standalone page">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                See details &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="svc-card is-clickable" id="card-hernia" role="button" tabindex="0" aria-haspopup="dialog" title="Click to view quick guide or see details" data-doc="saransh" data-svc-id="hernia">
+            <div class="svc-card-main">
+              <img src="assets/thumb-hernia.jpg" alt="Hernia & Abdominal Wall Reconstruction" class="svc-card-thumb" width="68" height="68" loading="lazy">
+              <div class="svc-card-text">
+                <div class="svc-card-title">Hernia &amp; Abdominal Wall Reconstruction</div>
+                <div class="svc-card-desc">Minimally invasive laparoscopic repair (TEP / TAPP) for inguinal, umbilical, epigastric &amp; incisional hernias.</div>
+              </div>
+            </div>
+            <div class="svc-card-actions">
+              <span class="svc-action-link svc-action-modal">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Quick Guide &blacktriangledown;
+              </span>
+              <a href="hernia.html" class="svc-action-link secondary" onclick="event.stopPropagation();" title="View details on standalone page">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                See details &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="svc-card is-clickable" id="card-gerd-reflux" role="button" tabindex="0" aria-haspopup="dialog" title="Click to view quick guide or see details" data-doc="saransh" data-svc-id="gerd-reflux">
+            <div class="svc-card-main">
+              <img src="assets/thumb-gerd-reflux.jpg" alt="GERD, Reflux & Esophageal Disorders" class="svc-card-thumb" width="68" height="68" loading="lazy">
+              <div class="svc-card-text">
+                <div class="svc-card-title">GERD, Reflux &amp; Esophageal Disorders</div>
+                <div class="svc-card-desc">Evaluation of severe acid reflux, hiatus hernia repair (laparoscopic fundoplication), and achalasia cardia.</div>
+              </div>
+            </div>
+            <div class="svc-card-actions">
+              <span class="svc-action-link svc-action-modal">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Quick Guide &blacktriangledown;
+              </span>
+              <a href="gerd-reflux.html" class="svc-action-link secondary" onclick="event.stopPropagation();" title="View details on standalone page">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                See details &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="svc-card is-clickable" id="card-gi-cancer" role="button" tabindex="0" aria-haspopup="dialog" title="Click to view quick guide or see details" data-doc="saransh" data-svc-id="gi-cancer">
+            <div class="svc-card-main">
+              <img src="assets/thumb-gi-cancer.jpg" alt="Gastrointestinal Cancer Surgery" class="svc-card-thumb" width="68" height="68" loading="lazy">
+              <div class="svc-card-text">
+                <div class="svc-card-title">Gastrointestinal Cancer Surgery</div>
+                <div class="svc-card-desc">Comprehensive evaluation and radical surgical care for stomach, intestinal, colorectal &amp; hepatobiliary malignancies.</div>
+              </div>
+            </div>
+            <div class="svc-card-actions">
+              <span class="svc-action-link svc-action-modal">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Quick Guide &blacktriangledown;
+              </span>
+              <a href="gi-cancer.html" class="svc-action-link secondary" onclick="event.stopPropagation();" title="View details on standalone page">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                See details &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="svc-card is-clickable" id="card-emergency-gi" role="button" tabindex="0" aria-haspopup="dialog" title="Click to view quick guide or see details" data-doc="saransh" data-svc-id="emergency-gi">
+            <div class="svc-card-main">
+              <img src="assets/thumb-emergency-gi.jpg" alt="Emergency GI Surgery & Laparoscopy" class="svc-card-thumb" width="68" height="68" loading="lazy">
+              <div class="svc-card-text">
+                <div class="svc-card-title">Emergency GI Surgery &amp; Laparoscopy</div>
+                <div class="svc-card-desc">Urgent surgical care for acute appendicitis, intestinal obstruction, gastrointestinal perforation &amp; peritonitis.</div>
+              </div>
+            </div>
+            <div class="svc-card-actions">
+              <span class="svc-action-link svc-action-modal">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Quick Guide &blacktriangledown;
+              </span>
+              <a href="emergency-gi.html" class="svc-action-link secondary" onclick="event.stopPropagation();" title="View details on standalone page">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                See details &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GYNAE SERVICES -->
+      <div class="svc-col gynae" data-from="right">
+        <h3>
+          <span class="svc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6.5 5.4 5.4 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></span>
+          Women's Health &amp; Maternity
+        </h3>
+        <p class="svc-sub" id="c-svcsub-prapti">With Dr Prapti Shah (MS, DNB OBGY, ART Fellowship)</p>
+        <div class="svc-items" data-stagger id="c-prapti-services">
+          <div class="svc-card is-clickable" id="card-pregnancy" role="button" tabindex="0" aria-haspopup="dialog" title="Click to view quick guide or see details" data-doc="prapti" data-svc-id="pregnancy">
+            <div class="svc-card-main">
+              <img src="assets/thumb-pregnancy.jpg" alt="Pregnancy Care & Safe Delivery" class="svc-card-thumb" width="68" height="68" loading="lazy">
+              <div class="svc-card-text">
+                <div class="svc-card-title">Pregnancy Care &amp; Safe Delivery</div>
+                <div class="svc-card-desc">Pre-conceptional counseling, routine antenatal care, normal delivery advocacy, and high-risk pregnancy monitoring.</div>
+              </div>
+            </div>
+            <div class="svc-card-actions">
+              <span class="svc-action-link svc-action-modal">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Quick Guide &blacktriangledown;
+              </span>
+              <a href="pregnancy.html" class="svc-action-link secondary" onclick="event.stopPropagation();" title="View details on standalone page">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                See details &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="svc-card is-clickable" id="card-fertility" role="button" tabindex="0" aria-haspopup="dialog" title="Click to view quick guide or see details" data-doc="prapti" data-svc-id="fertility">
+            <div class="svc-card-main">
+              <img src="assets/thumb-fertility.jpg" alt="Fertility Evaluation & ART Guidance" class="svc-card-thumb" width="68" height="68" loading="lazy">
+              <div class="svc-card-text">
+                <div class="svc-card-title">Fertility Evaluation &amp; ART Guidance</div>
+                <div class="svc-card-desc">Structured couple evaluation, ovarian reserve assessment, ovulation induction, and assistance with IUI / IVF pathways.</div>
+              </div>
+            </div>
+            <div class="svc-card-actions">
+              <span class="svc-action-link svc-action-modal">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Quick Guide &blacktriangledown;
+              </span>
+              <a href="fertility.html" class="svc-action-link secondary" onclick="event.stopPropagation();" title="View details on standalone page">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                See details &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="svc-card is-clickable" id="card-pcos" role="button" tabindex="0" aria-haspopup="dialog" title="Click to view quick guide or see details" data-doc="prapti" data-svc-id="pcos">
+            <div class="svc-card-main">
+              <img src="assets/thumb-pcos.jpg" alt="PCOS, PCOD & Hormonal Health" class="svc-card-thumb" width="68" height="68" loading="lazy">
+              <div class="svc-card-text">
+                <div class="svc-card-title">PCOS, PCOD &amp; Hormonal Health</div>
+                <div class="svc-card-desc">Holistic, evidence-based management of irregular cycles, hyperandrogenism, metabolic health, and weight concerns.</div>
+              </div>
+            </div>
+            <div class="svc-card-actions">
+              <span class="svc-action-link svc-action-modal">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Quick Guide &blacktriangledown;
+              </span>
+              <a href="pcos.html" class="svc-action-link secondary" onclick="event.stopPropagation();" title="View details on standalone page">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                See details &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="svc-card is-clickable" id="card-gynae-laparoscopy" role="button" tabindex="0" aria-haspopup="dialog" title="Click to view quick guide or see details" data-doc="prapti" data-svc-id="gynae-laparoscopy">
+            <div class="svc-card-main">
+              <img src="assets/thumb-gynae-laparoscopy.jpg" alt="Laparoscopic Gynaecological Surgery" class="svc-card-thumb" width="68" height="68" loading="lazy">
+              <div class="svc-card-text">
+                <div class="svc-card-title">Laparoscopic Gynaecological Surgery</div>
+                <div class="svc-card-desc">Keyhole surgery for uterine fibroids (myomectomy), ovarian cysts, ectopic pregnancy, and pelvic endometriosis.</div>
+              </div>
+            </div>
+            <div class="svc-card-actions">
+              <span class="svc-action-link svc-action-modal">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Quick Guide &blacktriangledown;
+              </span>
+              <a href="gynae-laparoscopy.html" class="svc-action-link secondary" onclick="event.stopPropagation();" title="View details on standalone page">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                See details &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="svc-card is-clickable" id="card-well-woman" role="button" tabindex="0" aria-haspopup="dialog" title="Click to view quick guide or see details" data-doc="prapti" data-svc-id="well-woman">
+            <div class="svc-card-main">
+              <img src="assets/thumb-well-woman.jpg" alt="Preventive Well-Woman Screening" class="svc-card-thumb" width="68" height="68" loading="lazy">
+              <div class="svc-card-text">
+                <div class="svc-card-title">Preventive Well-Woman Screening</div>
+                <div class="svc-card-desc">Routine cervical cancer screening (Pap smear), HPV vaccination counseling, breast examinations &amp; pelvic checkups.</div>
+              </div>
+            </div>
+            <div class="svc-card-actions">
+              <span class="svc-action-link svc-action-modal">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Quick Guide &blacktriangledown;
+              </span>
+              <a href="well-woman.html" class="svc-action-link secondary" onclick="event.stopPropagation();" title="View details on standalone page">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                See details &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="svc-card is-clickable" id="card-menopause" role="button" tabindex="0" aria-haspopup="dialog" title="Click to view quick guide or see details" data-doc="prapti" data-svc-id="menopause">
+            <div class="svc-card-main">
+              <img src="assets/thumb-menopause.jpg" alt="Perimenopause & Menopause Care" class="svc-card-thumb" width="68" height="68" loading="lazy">
+              <div class="svc-card-text">
+                <div class="svc-card-title">Perimenopause &amp; Menopause Care</div>
+                <div class="svc-card-desc">Guidance through hormonal transitions, bone mineral density protection, vasomotor symptoms, and healthy aging.</div>
+              </div>
+            </div>
+            <div class="svc-card-actions">
+              <span class="svc-action-link svc-action-modal">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Quick Guide &blacktriangledown;
+              </span>
+              <a href="menopause.html" class="svc-action-link secondary" onclick="event.stopPropagation();" title="View details on standalone page">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                See details &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. THE DOCTORS (FOLLOWING WHAT WE TREAT) ================= -->
+<section class="doctors" id="doctors">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow centered" data-reveal>The Doctors</p>
+      <h2 data-split>Two super-specialists. One promise.</h2>
+      <p data-reveal>Complementary fields, united by a common philosophy: listen carefully, explain transparently, and exhaust conservative medical treatment before considering surgery.</p>
+    </div>
+
+    <div class="doctor-grid">
+      <!-- DR SARANSH -->
+      <article class="doctor-card gut tilt" data-from="left">
+        <div class="portrait-container">
+          <img class="portrait-img" id="c-saransh-img" src="assets/dr-saransh.jpg" alt="Dr Saransh Vakharia" onerror="this.style.display='none'; document.getElementById('fb-saransh').style.display='flex';">
+          <div class="portrait-fallback" id="fb-saransh" role="img" aria-label="Dr Saransh Vakharia initials">SV</div>
+        </div>
+        <p class="doctor-tag">The Gut</p>
+        <h3 id="c-saransh-name">Dr Saransh Vakharia</h3>
+        
+        <!-- 2-line Role -->
+        <div class="doctor-role" id="c-saransh-role">
+          <span class="role-line">Surgical Gastroenterologist,</span>
+          <span class="role-line">Consultant HPB &amp; Laparoscopic Surgeon</span>
+        </div>
+
+        <!-- 4-line Degrees -->
+        <div class="doctor-cred" id="c-saransh-cred">
+          <div class="cred-line">MCh Surgical Gastroenterology (KEM Hospital Mumbai)</div>
+          <div class="cred-line">MS General Surgery (GMC Nagpur)</div>
+          <div class="cred-line">MBBS, MRCS (England)</div>
+          <div class="cred-line">FIAGES</div>
+        </div>
+        
+        <!-- 2 Highlighted Badges -->
+        <div class="badge-list" id="c-saransh-badges">
+          <span class="badge-pill">Gastrointestinal Cancer Specialist</span>
+          <span class="badge-pill">Advanced Laparoscopic Surgery</span>
+        </div>
+
+        <p class="doctor-bio" id="c-saransh-bio">
+          Super-specialist in advanced laparoscopic and surgical care of the digestive tract, liver, and pancreas. Dedicated to evidence-based, conservative management first, reserving minimally invasive surgery for clear, safe indications.
+        </p>
+
+        <ul class="care-list" id="c-saransh-highlights">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>Advanced Laparoscopic (Keyhole) GI &amp; Hernia Surgery</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>Gallbladder, Bile Duct, Liver &amp; Pancreatic Surgery</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>Gastrointestinal Cancer Surgery</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>Fast-track post-operative recovery (ERAS protocol)</li>
+        </ul>
+
+        <div class="doctor-actions">
+          <button class="btn btn-primary js-select-doctor" data-doc="saransh">Book Consultation</button>
+        </div>
+      </article>
+
+      <div class="grid-amp" aria-hidden="true" id="gridAmp"><span>&amp;</span></div>
+
+      <!-- DR PRAPTI -->
+      <article class="doctor-card gynae tilt" data-from="right">
+        <div class="portrait-container">
+          <img class="portrait-img" id="c-prapti-img" src="assets/dr-prapti.jpg" alt="Dr Prapti Shah" onerror="this.style.display='none'; document.getElementById('fb-prapti').style.display='flex';">
+          <div class="portrait-fallback" id="fb-prapti" role="img" aria-label="Dr Prapti Shah initials">PS</div>
+        </div>
+        <p class="doctor-tag">The Gynae</p>
+        <h3 id="c-prapti-name">Dr Prapti Shah</h3>
+        
+        <!-- 2-line Role -->
+        <div class="doctor-role" id="c-prapti-role">
+          <span class="role-line">Obstetrician &amp; Gynecologist,</span>
+          <span class="role-line">Infertility Specialist &amp; Laparoscopic Surgeon</span>
+        </div>
+
+        <!-- Symmetrically Aligned Degrees -->
+        <div class="doctor-cred" id="c-prapti-cred">
+          <div class="cred-line">MS Obstetrics &amp; Gynecology, DNB OBGY</div>
+          <div class="cred-line">MBBS</div>
+          <div class="cred-line">Fellowship in ART (Infertility)</div>
+        </div>
+        
+        <!-- 2 Highlighted Badges -->
+        <div class="badge-list" id="c-prapti-badges">
+          <span class="badge-pill">Reproductive Medicine Specialist</span>
+          <span class="badge-pill">Advanced Gynae Laparoscopy</span>
+        </div>
+
+        <p class="doctor-bio" id="c-prapti-bio">
+          Compassionate specialist dedicated to women's health across all life stages. Supports every pregnancy journey with gentle expertise, and provides patient-first clinical clarity for fertility, menstrual health, and laparoscopic care.
+        </p>
+
+        <ul class="care-list" id="c-prapti-highlights">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>Comprehensive Pregnancy Care, Safe Delivery &amp; Postnatal Support</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>Infertility Evaluation, Ovulation Induction &amp; ART Guidance</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>PCOS, Hormonal Health &amp; Menstrual Irregularities</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>Minimally Invasive Laparoscopic Gynaecological Surgery</li>
+        </ul>
+
+        <div class="doctor-actions">
+          <button class="btn btn-secondary js-select-doctor" data-doc="prapti">Book Consultation</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CINEMATIC BAND ================= -->
+<section class="band">
+  <div class="band-media" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="metadata" id="bandVideo" poster="assets/poster-band.jpg">
+      <source src="assets/care-lab.mp4" type="video/mp4">
+      <source src="https://videos.pexels.com/video-files/3195394/3195394-hd_1280_720_25fps.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="band-content">
+    <p class="eyebrow centered" data-reveal>Our Promise</p>
+    <p class="band-quote" data-split id="c-quote">"We treat every patient the way we'd want our own family treated."</p>
+    <p class="band-credit" data-reveal id="c-quote-credit">— Dr Saransh Vakharia &amp; Dr Prapti Shah</p>
+  </div>
+</section>
+
+<!-- ================= PATIENT FAQS ================= -->
+<section class="faqs" id="faqs">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow centered" data-reveal>Patient Guide</p>
+      <h2 data-split>Frequently Asked Questions</h2>
+      <p data-reveal>Clear answers to common questions about surgical procedures, consultations, and pregnancy care.</p>
+    </div>
+
+    <div class="faq-list" id="faqList" data-stagger>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>When does a gallstone require surgery, and can it be dissolved with medicine?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Gallstones that cause symptoms (such as pain in the upper right abdomen, bloating after meals, or nausea) require surgical removal of the gallbladder (laparoscopic cholecystectomy). Medicines cannot reliably dissolve gallstones or prevent future attacks, pancreatitis, or infection. Asymptomatic "silent" stones found incidentally usually only need observation, unless specific high-risk features are present.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>How soon can I return to normal daily life after laparoscopic (keyhole) surgery?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Because laparoscopic surgery uses small 5mm to 10mm incisions rather than large open cuts, post-operative pain is minimal. Most patients walk comfortably within hours of surgery, are discharged within 24 to 48 hours, and can resume desk work and light routine activities within 5 to 7 days.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>What gastrointestinal cancers are treated at Gut &amp; Gynae?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            We provide comprehensive surgical care for malignancies of the entire digestive tract — including cancers of the stomach, gallbladder, liver, pancreas, colon, and rectum. Treatment emphasizes thorough radiological staging, laparoscopic minimally invasive approaches where indicated, and evidence-based radical resection.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>What should I expect during my first pregnancy (antenatal) consultation?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Your first visit includes a comprehensive medical and family health review, baseline vital checks, calculation of gestational age and expected delivery date, prescription of essential prenatal vitamins (folic acid), and planning of routine first-trimester scans (Dating / NT scan) and blood tests.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>Is surgery always required for uterine fibroids or ovarian cysts?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            No. Small, asymptomatic fibroids and simple ovarian cysts frequently require only routine ultrasound monitoring. Surgery (laparoscopic myomectomy or cystectomy) is considered only if there is severe pelvic pain, heavy menstrual bleeding leading to anemia, rapid growth, or interference with fertility.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>What documents and records should I bring for my OPD consultation at GMC Nagpur?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Please bring all recent blood reports, imaging films/CDs (Ultrasound, CT, MRI), endoscopy reports, past surgical discharge summaries, and a list of all current prescription medications.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOKING ================= -->
+<section class="booking" id="book">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow centered" data-reveal>Book a Consultation</p>
+      <h2 data-split>Fast, personal scheduling.</h2>
+      <p data-reveal>Book instantly via WhatsApp or leave your details below — we will confirm your OPD consultation at GMC Nagpur.</p>
+    </div>
+
+    <div class="steps-wrap">
+      <div class="steps-line" aria-hidden="true"><div class="steps-line-fill" id="stepsLine"></div></div>
+      <div class="steps">
+        <div class="step" data-step>
+          <div class="step-num">1</div>
+          <h4>Select Specialist</h4>
+          <p>Digestive or surgical concerns? Dr Saransh. Women's health or maternity? Dr Prapti. Not sure? Either is fine — we will guide you.</p>
+        </div>
+        <div class="step" data-step>
+          <div class="step-num">2</div>
+          <h4>Share Your Details</h4>
+          <p>Your name, phone number, and a brief description of what troubles you. That is all we need to begin.</p>
+        </div>
+        <div class="step" data-step>
+          <div class="step-num">3</div>
+          <h4>Confirmation</h4>
+          <p>Connect instantly on WhatsApp or receive a prompt confirmation call during OPD hours (9:00 AM – 4:00 PM).</p>
+        </div>
+      </div>
+    </div>
+
+    <form class="form-card" id="bookingForm" novalidate data-reveal>
+      <h3>Request an appointment</h3>
+      <p class="form-sub">Direct OPD appointments at Government Medical College, Nagpur</p>
+
+      <!-- Instant WhatsApp Quick Banner -->
+      <div class="whatsapp-banner">
+        <div class="whatsapp-banner-text">
+          <h4>Prefer instant confirmation?</h4>
+          <p>Skip the form and message the clinic directly on WhatsApp.</p>
+        </div>
+        <button type="button" class="btn btn-whatsapp" id="btnQuickWa">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.07-1.701-.369-1.284-.528-2.115-1.83-2.179-1.915-.064-.085-.515-.688-.515-1.313s.328-.934.444-1.058c.116-.124.254-.155.339-.155.085 0 .17 0 .244.005.078.005.182-.03.285.219.106.254.36 877.392.941.032.064.053.138.01.222-.042.085-.064.138-.128.212-.064.074-.135.166-.192.223-.064.064-.131.134-.057.261.074.127.329.544.706.879.486.432.896.565 1.023.629.127.064.202.053.276-.032.074-.085.318-.371.403-.498.085-.127.17-.106.286-.064.116.042.741.35 868.413.127.064.212.096.244.149.032.053.032.308-.112.713zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.98-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          Chat on WhatsApp
+        </button>
+      </div>
+
+      <div class="choose-doctor" role="radiogroup" aria-label="Choose your specialist">
+        <div class="doc-option gut">
+          <input type="radio" name="doctor" id="doc-saransh" value="Dr Saransh Vakharia (Surgical Gastroenterology)" checked>
+          <label for="doc-saransh">
+            <span class="doc-name" id="c-form-saransh">Dr Saransh Vakharia</span>
+            <span class="doc-for">Surgical Gastroenterology &amp; HPB Surgery</span>
+          </label>
+        </div>
+        <div class="doc-option gynae">
+          <input type="radio" name="doctor" id="doc-prapti" value="Dr Prapti Shah (Obstetrics & Gynaecology)">
+          <label for="doc-prapti">
+            <span class="doc-name" id="c-form-prapti">Dr Prapti Shah</span>
+            <span class="doc-for">Obstetrics, Gynaecology &amp; Infertility</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="f-name">Patient Name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="f-name" name="name" autocomplete="name" placeholder="Full name" required>
+          <p class="form-error" id="err-name">Please tell us your name.</p>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
+          <input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="10-digit mobile number" required>
+          <p class="form-error" id="err-phone">Please enter a valid phone number.</p>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-time">Preferred Day / Time <span class="opt">(optional)</span></label>
+        <input type="text" id="f-time" name="time" placeholder="e.g. Morning 10 AM, or Saturday">
+      </div>
+
+      <div class="field">
+        <label for="f-concern">Brief Clinical Concern <span class="opt">(optional)</span></label>
+        <textarea id="f-concern" name="concern" placeholder="Briefly describe your symptoms or diagnosis (e.g. Gallbladder stones, pregnancy check, acid reflux) — a line or two is plenty."></textarea>
+      </div>
+
+      <div class="form-buttons">
+        <button type="button" class="btn btn-whatsapp" id="btnSubmitWa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.07-1.701-.369-1.284-.528-2.115-1.83-2.179-1.915-.064-.085-.515-.688-.515-1.313s.328-.934.444-1.058c.116-.124.254-.155.339-.155.085 0 .17 0 .244.005.078.005.182-.03.285.219.106.254.36 877.392.941.032.064.053.138.01.222-.042.085-.064.138-.128.212-.064.074-.135.166-.192.223-.064.064-.131.134-.057.261.074.127.329.544.706.879.486.432.896.565 1.023.629.127.064.202.053.276-.032.074-.085.318-.371.403-.498.085-.127.17-.106.286-.064.116.042.741.35 868.413.127.064.212.096.244.149.032.053.032.308-.112.713zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.98-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          Send via WhatsApp
+        </button>
+        <button type="submit" class="btn btn-primary" id="btnSubmitForm">
+          Submit Request
+        </button>
+      </div>
+
+      <!-- In-Page Confirmation Card -->
+      <div class="form-success-box" id="formSuccess">
+        <h4>Appointment Request Received</h4>
+        <p id="formSuccessMessage">Thank you! Your consultation request has been recorded. We will call you during OPD hours (9:00 AM – 4:00 PM) to confirm your time slot at GMC Nagpur.</p>
+        <div class="form-success-actions">
+          <a class="btn btn-whatsapp" id="btnSuccessWa" href="#" target="_blank" rel="noopener">Continue on WhatsApp</a>
+          <button type="button" class="btn btn-ghost" id="btnResetForm">Book Another</button>
+        </div>
+      </div>
+
+      <p class="form-note">
+        Need immediate assistance? Call <a class="js-phone" href="tel:+919820000000">+91&nbsp;98200&nbsp;00000</a>
+        or write to <a class="js-email" href="mailto:saransh.vakharia@gmail.com">saransh.vakharia@gmail.com</a>
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= LOCATION ================= -->
+<section class="location" id="location">
+  <div class="loc-aurora" aria-hidden="true"></div>
+  <div class="loc-amp" aria-hidden="true" id="locAmp">&amp;</div>
+  <div class="loc-grid">
+    <div>
+      <p class="eyebrow" data-reveal>Find Us</p>
+      <h2 data-split id="c-loc-title">Government Medical College, Nagpur</h2>
+      <p data-reveal id="c-loc-desc">
+        We consult at the Outpatient Department (OPD) of Government Medical College &amp; Hospital, Nagpur
+        — Central India's apex academic and healthcare institution. Super-specialized care with direct
+        clinical access and modern surgical facilities.
+      </p>
+    </div>
+    <div class="loc-details" data-stagger>
+      <div class="loc-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <p class="loc-label">Hospital Address</p>
+          <p class="loc-value" id="c-address">Government Medical College &amp; Hospital (GMC),<br>Medical Square, Hanuman Nagar, Nagpur, Maharashtra — 440003</p>
+        </div>
+      </div>
+      <div class="loc-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <div>
+          <p class="loc-label">OPD Timings</p>
+          <p class="loc-value" id="c-timings">Monday to Saturday · 9:00 AM – 4:00 PM</p>
+        </div>
+      </div>
+      <div class="loc-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13 1 .36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.8.57 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        <div>
+          <p class="loc-label">Direct Phone / OPD Inquiries</p>
+          <p class="loc-value"><a class="js-phone" href="tel:+919820000000">+91 98200 00000</a></p>
+        </div>
+      </div>
+      <a class="btn btn-light magnetic" id="c-maps-btn" href="https://maps.google.com/?q=Government+Medical+College+Nagpur" target="_blank" rel="noopener">
+        Get directions on Google Maps
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p class="footer-logo" data-split-footer>
+    <span class="w"><span class="wi">Gut</span></span><span class="w"><span class="wi amp">&amp;</span></span><span class="w"><span class="wi">Gynae</span></span>
+  </p>
+  <p id="c-footer-names">Dr Saransh Vakharia · Dr Prapti Shah · GMC Nagpur, Maharashtra</p>
+  <p class="fine">&copy; <span id="year"></span> Gut &amp; Gynae. This website shares general medical information and is not a substitute for formal clinical consultation.</p>
+</footer>
+
+<!-- ================= STICKY MOBILE ACTION BAR ================= -->
+<div class="mobile-action-bar" id="mobileActionBar">
+  <a class="btn btn-ghost js-phone" href="tel:+919820000000">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13 1 .36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.8.57 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Call OPD
+  </a>
+  <a class="btn btn-whatsapp js-mobile-wa" href="#book">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.07-1.701-.369-1.284-.528-2.115-1.83-2.179-1.915-.064-.085-.515-.688-.515-1.313s.328-.934.444-1.058c.116-.124.254-.155.339-.155.085 0 .17 0 .244.005.078.005.182-.03.285.219.106.254.36 877.392.941.032.064.053.138.01.222-.042.085-.064.138-.128.212-.064.074-.135.166-.192.223-.064.064-.131.134-.057.261.074.127.329.544.706.879.486.432.896.565 1.023.629.127.064.202.053.276-.032.074-.085.318-.371.403-.498.085-.127.17-.106.286-.064.116.042.741.35 868.413.127.064.212.096.244.149.032.053.032.308-.112.713zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.98-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<!-- ============ CLINICAL CONDITION MODAL (IN-PAGE POPUP) ============ -->
+<div id="gallbladderModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="gbModalTitle" aria-hidden="true">
+  <div class="modal-dialog" id="modalDialog">
+    <div class="modal-head">
+      <div class="modal-eyebrow" id="modalEyebrow">Patient Clinical Guide · Surgical Gastroenterology</div>
+      <h3 class="modal-title" id="gbModalTitle">Gallbladder &amp; Biliary Disease</h3>
+      <div class="modal-doctor-sub" id="modalDoctorSub">Dr Saransh Vakharia (MCh Surgical Gastroenterology) · GMC Nagpur</div>
+      <button type="button" class="modal-close-btn" id="closeGbModal" aria-label="Close popup">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Tabs Navigation -->
+    <div class="modal-tabs" role="tablist">
+      <button type="button" class="modal-tab-btn is-active" role="tab" aria-selected="true" data-tab="tab-symptoms">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M22 12A10 10 0 1 1 2 12a10 10 0 0 1 20 0z"/></svg>
+        Symptoms &amp; Warning Signs
+      </button>
+      <button type="button" class="modal-tab-btn" role="tab" aria-selected="false" data-tab="tab-investigate">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        How We Investigate
+      </button>
+      <button type="button" class="modal-tab-btn" role="tab" aria-selected="false" data-tab="tab-treatment">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Treatment &amp; Care
+      </button>
+    </div>
+
+    <!-- Tab Panels Body -->
+    <div class="modal-body">
+      <!-- Panel 1: Symptoms -->
+      <div id="tab-symptoms" class="modal-panel is-active" role="tabpanel">
+        <h4 class="modal-section-title">Common Symptoms &amp; Warning Signs</h4>
+        <p class="modal-text" id="modalSymptomsIntro"></p>
+        <ul class="modal-list" id="modalSymptomsList"></ul>
+        <div class="modal-callout alert" id="modalRedFlagsBox">
+          <h5>🚨 Urgent Red-Flag Signs (Emergency Consultation Required)</h5>
+          <div id="modalRedFlagsText"></div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Investigations -->
+      <div id="tab-investigate" class="modal-panel" role="tabpanel">
+        <h4 class="modal-section-title">Diagnostic Pathway</h4>
+        <p class="modal-text" id="modalInvestigateIntro"></p>
+        <ul class="modal-list" id="modalInvestigateList"></ul>
+        <div class="modal-callout" id="modalInvestigateNoticeBox" style="display:none;">
+          <h5 id="modalInvestigateNoticeTitle">💡 Clinical Notice:</h5>
+          <div id="modalInvestigateNoticeText"></div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Treatment -->
+      <div id="tab-treatment" class="modal-panel" role="tabpanel">
+        <h4 class="modal-section-title">Treatment, Keyhole Surgery &amp; Care Pathway</h4>
+        <p class="modal-text" id="modalTreatmentIntro"></p>
+        <ul class="modal-list" id="modalTreatmentList"></ul>
+      </div>
+    </div>
+
+    <!-- Modal Footer Actions -->
+    <div class="modal-foot">
+      <div class="modal-foot-actions">
+        <a id="modalWaBtn" class="modal-btn-wa" href="https://wa.me/919820000000?text=Hello%20Gut%20%26%20Gynae%20Clinic%20Desk,%20I%20would%20like%20to%20inquire%20regarding%20an%20OPD%20appointment%20for%20Gallbladder%20stones%20at%20GMC%20Nagpur." target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.07-1.701-.369-1.284-.528-2.115-1.83-2.179-1.915-.064-.085-.515-.688-.515-1.313s.328-.934.444-1.058c.116-.124.254-.155.339-.155.085 0 .17 0 .244.005.078.005.182-.03.285.219.106.254.36.877.392.941.032.064.053.138.01.222-.042.085-.064.138-.128.212-.064.074-.135.166-.192.223-.064.064-.131.134-.057.261.074.127.329.544.706.879.486.432.896.565 1.023.629.127.064.202.053.276-.032.074-.085.318-.371.403-.498.085-.127.17-.106.286-.064.116.042.741.35.868.413.127.064.212.096.244.149.032.053.032.308-.112.713zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.98-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          WhatsApp Clinic Desk
+        </a>
+        <button type="button" id="modalBookBtn" class="modal-btn-book">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book OPD at GMC
+        </button>
+      </div>
+      <a href="gallbladder.html" class="modal-page-link" title="Open the full dedicated webpage guide">
+        <span>See details &rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="content.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer  = window.matchMedia('(pointer: fine)').matches;
+  var hasGsap = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+
+  var S = window.SITE || {};
+
+  // ---------- WhatsApp Helper ----------
+  function getWhatsAppUrl(inquiryTopic, patientName, patientPhone, timeSlot, concernText){
+    var rawPhone = S.whatsappPhone || S.phone || '+919820000000';
+    var cleanNum = String(rawPhone).replace(/[^\d]/g, '');
+    if (!cleanNum.startsWith('91') && cleanNum.length === 10) cleanNum = '91' + cleanNum;
+    
+    var msg = 'Hello Gut & Gynae Clinic Desk,\n\nI would like to inquire about an appointment at GMC Nagpur.';
+    if (inquiryTopic) msg += '\n• Regarding / Specialty: ' + inquiryTopic;
+    if (patientName) msg += '\n• Patient Name: ' + patientName;
+    if (patientPhone) msg += '\n• Contact: ' + patientPhone;
+    if (timeSlot) msg += '\n• Preferred Time: ' + timeSlot;
+    if (concernText) msg += '\n• Clinical Concern: ' + concernText;
+    
+    return 'https://wa.me/' + cleanNum + '?text=' + encodeURIComponent(msg);
+  }
+
+  // ---------- apply editable content from content.js ----------
+  (function applyContent(){
+    if (!S) return;
+    function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    function set(id, txt, asHtml){
+      var el = document.getElementById(id);
+      if (el && txt != null){ if (asHtml) el.innerHTML = txt; else el.textContent = txt; }
+    }
+
+    if (S.heroTagline) set('c-hero-tagline', S.heroTagline, true);
+    if (S.heroLocation) set('c-marquee-loc', S.heroLocation);
+
+    // Phones & WhatsApp Links
+    if (S.phone){
+      var telHref = 'tel:' + String(S.phone).replace(/[^+\d]/g,'');
+      document.querySelectorAll('.js-phone').forEach(function(a){ a.href = telHref; a.textContent = S.phone; });
+    }
+    if (S.email){
+      document.querySelectorAll('.js-email').forEach(function(a){ a.href = 'mailto:' + S.email; a.textContent = S.email; });
+    }
+
+    var defaultWaUrl = getWhatsAppUrl('General Consultation');
+    document.querySelectorAll('.js-hero-wa, .js-mobile-wa').forEach(function(a){
+      a.href = defaultWaUrl;
+    });
+
+    // Location
+    if (S.hospitalName) set('c-loc-title', S.hospitalName);
+    if (S.addressLine1 || S.addressLine2){
+      set('c-address', esc(S.addressLine1 || '') + '<br>' + esc(S.addressLine2 || ''), true);
+    }
+    if (S.opdTimings) set('c-timings', S.opdTimings);
+    if (S.mapsUrl){
+      var mBtn = document.getElementById('c-maps-btn');
+      if (mBtn) mBtn.href = S.mapsUrl;
+    }
+
+    // Doctors Data
+    [['saransh', S.saransh], ['prapti', S.prapti]].forEach(function(pair){
+      var key = pair[0], d = pair[1]; if (!d) return;
+      set('c-' + key + '-name', d.name);
+      set('c-' + key + '-bio', d.bio);
+      set('c-side-' + key, d.name);
+      set('c-form-' + key, d.name);
+      if (d.name) set('c-svcsub-' + key, 'With ' + d.name);
+
+      // Multi-line Roles
+      var rBox = document.getElementById('c-' + key + '-role');
+      if (rBox){
+        if (d.roleLines && d.roleLines.length){
+          rBox.innerHTML = d.roleLines.map(function(l){ return '<span class="role-line">' + esc(l) + '</span>'; }).join('');
+        } else if (d.role) {
+          rBox.textContent = d.role;
+        }
+      }
+
+      // Multi-line Credentials
+      var cBox = document.getElementById('c-' + key + '-cred');
+      if (cBox){
+        if (d.credentialsLines && d.credentialsLines.length){
+          cBox.innerHTML = d.credentialsLines.map(function(l){ return '<div class="cred-line">' + esc(l) + '</div>'; }).join('');
+        } else if (d.credentials) {
+          cBox.textContent = d.credentials;
+        }
+      }
+      
+      // Symmetrical Badges
+      if (d.badges && d.badges.length){
+        var bBox = document.getElementById('c-' + key + '-badges');
+        if (bBox){
+          bBox.innerHTML = '';
+          d.badges.forEach(function(bg){
+            var sp = document.createElement('span');
+            sp.className = 'badge-pill';
+            sp.textContent = bg;
+            bBox.appendChild(sp);
+          });
+        }
+      }
+
+      // Highlights
+      if (d.highlights && d.highlights.length){
+        var hBox = document.getElementById('c-' + key + '-highlights');
+        if (hBox){
+          hBox.innerHTML = '';
+          d.highlights.forEach(function(hl){
+            var li = document.createElement('li');
+            li.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>' + esc(hl);
+            hBox.appendChild(li);
+          });
+        }
+      }
+
+      // Services Cards (All 12 Conditions)
+      if (d.services && d.services.length){
+        var sBox = document.getElementById('c-' + key + '-services');
+        if (sBox){
+          sBox.innerHTML = '';
+          d.services.forEach(function(svc){
+            var card = document.createElement('div');
+            var titleText = typeof svc === 'string' ? svc : svc.title;
+            var descText = typeof svc === 'string' ? '' : svc.desc;
+            var svcId = (typeof svc === 'object' && svc.id) ? svc.id : titleText.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            var thumbSrc = (typeof svc === 'object' && svc.thumbnail) ? svc.thumbnail : ('assets/thumb-' + svcId + '.jpg');
+            var guideUrl = (typeof svc === 'object' && svc.guidePageUrl) ? svc.guidePageUrl : (svcId + '.html');
+            
+            card.className = 'svc-card is-clickable';
+            card.id = 'card-' + svcId;
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('aria-haspopup', 'dialog');
+            card.setAttribute('title', 'Click to open quick guide or see details');
+            
+            card.innerHTML = 
+              '<div class="svc-card-main">' +
+                '<img src="' + esc(thumbSrc) + '" alt="' + esc(titleText) + '" class="svc-card-thumb" width="68" height="68" loading="lazy">' +
+                '<div class="svc-card-text">' +
+                  '<div class="svc-card-title">' + esc(titleText) + '</div>' +
+                  (descText ? '<div class="svc-card-desc">' + esc(descText) + '</div>' : '') +
+                '</div>' +
+              '</div>' +
+              '<div class="svc-card-actions">' +
+                '<span class="svc-action-link svc-action-modal">' +
+                  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>' +
+                  ((svc && svc.quickGuideLabel) ? esc(svc.quickGuideLabel) : 'Quick Guide') + ' &blacktriangledown;' +
+                '</span>' +
+                '<a href="' + esc(guideUrl) + '" class="svc-action-link secondary" onclick="event.stopPropagation();" title="View details on standalone page">' +
+                  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>' +
+                  ((svc && svc.guideLabel) ? esc(svc.guideLabel) : 'See details') + ' &rarr;' +
+                '</a>' +
+              '</div>';
+
+            card.addEventListener('click', function(e){
+              openConditionModal(svc, key);
+            });
+            card.addEventListener('keydown', function(e){
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openConditionModal(svc, key);
+              }
+            });
+            sBox.appendChild(card);
+          });
+        }
+      }
+    });
+
+    set('c-quote', S.quote);
+    set('c-quote-credit', S.quoteCredit);
+    if (S.saransh && S.prapti && S.saransh.name && S.prapti.name){
+      set('c-footer-names', S.saransh.name + ' · ' + S.prapti.name + ' · ' + (S.hospitalName || 'GMC Nagpur'));
+    }
+
+    // FAQs
+    if (S.faqs && S.faqs.length){
+      var fBox = document.getElementById('faqList');
+      if (fBox){
+        fBox.innerHTML = '';
+        S.faqs.forEach(function(faq, idx){
+          var item = document.createElement('div');
+          item.className = 'faq-item' + (idx === 0 ? ' active' : '');
+          item.innerHTML = 
+            '<button class="faq-question" type="button" aria-expanded="' + (idx === 0 ? 'true' : 'false') + '">' +
+              '<span>' + esc(faq.q) + '</span>' +
+              '<span class="faq-icon" aria-hidden="true">' +
+                '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>' +
+              '</span>' +
+            '</button>' +
+            '<div class="faq-answer" style="' + (idx === 0 ? 'max-height:220px;' : '') + '">' +
+              '<div class="faq-answer-inner">' + esc(faq.a) + '</div>' +
+            '</div>';
+          fBox.appendChild(item);
+        });
+      }
+    }
+  })();
+
+  // ---------- FAQ Accordion Logic ----------
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.faq-question');
+    if (!btn) return;
+    var item = btn.closest('.faq-item');
+    var isOpen = item.classList.contains('active');
+    
+    if (isOpen){
+      item.classList.remove('active');
+      btn.setAttribute('aria-expanded', 'false');
+      var ans = item.querySelector('.faq-answer');
+      if (ans) ans.style.maxHeight = '0px';
+    } else {
+      item.classList.add('active');
+      btn.setAttribute('aria-expanded', 'true');
+      var ans = item.querySelector('.faq-answer');
+      if (ans) ans.style.maxHeight = ans.scrollHeight + 'px';
+    }
+  });
+
+  // ---------- Doctor Selection Quick Buttons ----------
+  document.querySelectorAll('.js-select-doctor').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var docKey = btn.getAttribute('data-doc');
+      var radio = document.getElementById(docKey === 'saransh' ? 'doc-saransh' : 'doc-prapti');
+      if (radio){
+        radio.checked = true;
+        var bookSection = document.getElementById('book');
+        if (bookSection){
+          bookSection.scrollIntoView({behavior:'smooth'});
+        }
+      }
+    });
+  });
+
+  // ---------- Quick WhatsApp Banner ----------
+  var btnQuickWa = document.getElementById('btnQuickWa');
+  if (btnQuickWa){
+    btnQuickWa.addEventListener('click', function(){
+      var form = document.getElementById('bookingForm');
+      var doctor = form.querySelector('input[name="doctor"]:checked').value;
+      window.open(getWhatsAppUrl(doctor), '_blank');
+    });
+  }
+
+  // ---------- Form Submission & WhatsApp Handover ----------
+  var form = document.getElementById('bookingForm');
+  var btnSubmitWa = document.getElementById('btnSubmitWa');
+
+  function validateBookingForm(){
+    var name = document.getElementById('f-name');
+    var phone = document.getElementById('f-phone');
+    var valid = true;
+    
+    var errName = document.getElementById('err-name');
+    var errPhone = document.getElementById('err-phone');
+    
+    if (!name.value.trim()){
+      errName.classList.add('show');
+      valid = false;
+    } else {
+      errName.classList.remove('show');
+    }
+
+    var cleanDigits = phone.value.replace(/[^\d]/g, '');
+    if (!cleanDigits || cleanDigits.length < 10){
+      errPhone.classList.add('show');
+      valid = false;
+    } else {
+      errPhone.classList.remove('show');
+    }
+
+    return valid;
+  }
+
+  function handleFormSubmit(openWaDirectly){
+    if (!validateBookingForm()) return;
+
+    var doctor = form.querySelector('input[name="doctor"]:checked').value;
+    var name = document.getElementById('f-name').value.trim();
+    var phone = document.getElementById('f-phone').value.trim();
+    var time = document.getElementById('f-time').value.trim() || 'Flexible during OPD hours (9 AM – 4 PM)';
+    var concern = document.getElementById('f-concern').value.trim() || 'General OPD consultation';
+
+    var waUrl = getWhatsAppUrl(doctor, name, phone, time, concern);
+
+    var successBox = document.getElementById('formSuccess');
+    var msgEl = document.getElementById('formSuccessMessage');
+    var waBtn = document.getElementById('btnSuccessWa');
+
+    msgEl.textContent = 'Thank you, ' + name + '! We have received your request for ' + doctor.split('(')[0].trim() + '. Our OPD team at GMC Nagpur will reach out at ' + phone + ' to confirm your slot.';
+    waBtn.href = waUrl;
+    successBox.classList.add('show');
+    successBox.scrollIntoView({behavior:'smooth', block:'center'});
+
+    if (openWaDirectly){
+      window.open(waUrl, '_blank');
+    }
+  }
+
+  if (btnSubmitWa){
+    btnSubmitWa.addEventListener('click', function(e){
+      e.preventDefault();
+      handleFormSubmit(true);
+    });
+  }
+
+  if (form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      handleFormSubmit(false);
+    });
+  }
+
+  var btnResetForm = document.getElementById('btnResetForm');
+  if (btnResetForm){
+    btnResetForm.addEventListener('click', function(){
+      document.getElementById('formSuccess').classList.remove('show');
+      form.reset();
+    });
+  }
+
+  // ---------- footer year ----------
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---------- video autoplay nudge ----------
+  var VIDEO_IDS = ['heroVideoL','heroVideoR','bandVideo'];
+  function nudgeVideos(){
+    VIDEO_IDS.forEach(function(id){
+      var v = document.getElementById(id);
+      if (v && v.paused){ v.play().catch(function(){}); }
+    });
+  }
+  window.addEventListener('load', nudgeVideos);
+  window.addEventListener('pointerdown', nudgeVideos, {once:true});
+  if (!reduceMotion){
+    VIDEO_IDS.forEach(function(id){
+      var v = document.getElementById(id);
+      if (v){ v.addEventListener('pause', function(){
+        if (document.visibilityState === 'visible'){ v.play().catch(function(){}); }
+      }); }
+    });
+    document.addEventListener('visibilitychange', function(){
+      if (document.visibilityState === 'visible'){ nudgeVideos(); }
+    });
+  }
+
+  // ---------- nav state ----------
+  var nav = document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // ---------- no-GSAP fallback ----------
+  var curtain = document.getElementById('curtain');
+  if (!hasGsap || reduceMotion){
+    document.documentElement.classList.add('no-gsap');
+    if (curtain) curtain.remove();
+    var h = document.querySelector('.hero');
+    if (h) h.classList.add('loaded');
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  setTimeout(function(){
+    if (curtain && curtain.parentNode){ curtain.remove(); }
+    var h = document.querySelector('.hero'); if (h){ h.classList.add('loaded'); }
+  }, 3200);
+
+  // ---------- Lenis smooth scroll ----------
+  var lenis = null;
+  try {
+    if (typeof Lenis !== 'undefined'){
+      document.documentElement.classList.add('lenis');
+      lenis = new Lenis({ lerp: 0.11, smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      lenis.on('scroll', function(e){
+        var y = (e && typeof e.scroll === 'number') ? e.scroll : window.scrollY;
+        nav.classList.toggle('scrolled', y > 40);
+      });
+      gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
+      gsap.ticker.lagSmoothing(0);
+      document.querySelectorAll('a[href^="#"]').forEach(function(a){
+        a.addEventListener('click', function(e){
+          var href = a.getAttribute('href');
+          if (href && href.length > 1){
+            var target = document.querySelector(href);
+            if (target){ e.preventDefault(); lenis.scrollTo(target, {offset: -20}); }
+          }
+        });
+      });
+    }
+  } catch (e) { lenis = null; document.documentElement.classList.remove('lenis'); }
+
+  // ---------- word splitting for [data-split] headings ----------
+  document.querySelectorAll('[data-split]').forEach(function(el){
+    var frag = document.createDocumentFragment();
+    el.childNodes.forEach(function(node){ frag.appendChild(node.cloneNode(true)); });
+    el.textContent = '';
+    frag.childNodes.forEach(function(node){
+      if (node.nodeType === 3){
+        node.textContent.split(/\s+/).filter(Boolean).forEach(function(word){
+          var w = document.createElement('span'); w.className = 'w';
+          var wi = document.createElement('span'); wi.className = 'wi'; wi.textContent = word;
+          w.appendChild(wi); el.appendChild(w); el.appendChild(document.createTextNode(' '));
+        });
+      } else {
+        var w = document.createElement('span'); w.className = 'w';
+        var wi = document.createElement('span'); wi.className = 'wi';
+        wi.appendChild(node.cloneNode(true)); w.appendChild(wi);
+        el.appendChild(w); el.appendChild(document.createTextNode(' '));
+      }
+    });
+  });
+
+  // ---------- load sequence: curtain + split-hero sweep ----------
+  var hero = document.querySelector('.hero');
+  gsap.set('[data-load]', {y: 26, opacity: 0});
+  gsap.set('.hero-title .wi', {yPercent: 115});
+  gsap.set('.scroll-hint', {opacity: 0});
+  gsap.set(hero, {'--seamL': '-14%', '--seamR': '114%'});
+
+  var intro = gsap.timeline({defaults:{ease:'power3.out'}});
+  intro
+    .to('#curtainAmp', {opacity: 0, scale: .92, duration: .45, ease: 'power2.in', delay: .55})
+    .to('.curtain-panel.t', {scaleY: 0, duration: .75, ease: 'power3.inOut'}, '-=.1')
+    .to('.curtain-panel.r', {scaleY: 0, duration: .75, ease: 'power3.inOut'}, '<.12')
+    .add(function(){ if (curtain && curtain.parentNode) curtain.remove(); })
+    .to(hero, {'--seamL': '50%', '--seamR': '50%', duration: 1.25, ease: 'power4.inOut'}, '-=.55')
+    .add(function(){ hero.classList.add('loaded'); }, '-=.45')
+    .to('.hero-title .wi', {yPercent: 0, duration: 1.05, stagger: .14, ease: 'power4.out'}, '-=.5')
+    .to('[data-load="2"]', {y: 0, opacity: 1, duration: .7}, '-=.7')
+    .to('[data-load="3"]', {y: 0, opacity: 1, duration: .7, clearProps: 'opacity,transform'}, '-=.5')
+    .to('[data-load="4"]', {y: 0, opacity: 1, duration: .7}, '-=.5')
+    .to('.scroll-hint', {opacity: 1, duration: .8}, '-=.3');
+
+  setTimeout(function(){
+    var t = document.querySelector('.amp-svg text');
+    if (t){ t.style.strokeDashoffset = '0'; t.style.fillOpacity = '1'; }
+  }, 4500);
+
+  // ---------- seam follows cursor (desktop only) ----------
+  if (finePointer){
+    var seamTo  = gsap.quickTo(hero, '--seamL', {duration: .8, ease: 'power3.out', unit: '%'});
+    var seamTo2 = gsap.quickTo(hero, '--seamR', {duration: .8, ease: 'power3.out', unit: '%'});
+    var vidL = gsap.quickTo('#heroVideoL', 'xPercent', {duration: 1, ease: 'power3.out'});
+    var vidR = gsap.quickTo('#heroVideoR', 'xPercent', {duration: 1, ease: 'power3.out'});
+    var introDone = false;
+    intro.eventCallback('onComplete', function(){ introDone = true; });
+    hero.addEventListener('pointermove', function(e){
+      if (!introDone) return;
+      var nx = e.clientX / window.innerWidth - .5;
+      seamTo(50 + nx * 7); seamTo2(50 + nx * 7);
+      vidL(nx * -2.5); vidR(nx * 2.5);
+    });
+    hero.addEventListener('pointerleave', function(){
+      if (!introDone) return;
+      seamTo(50); seamTo2(50); vidL(0); vidR(0);
+    });
+  }
+
+  // ---------- scroll progress bar ----------
+  gsap.to('#progressBar', {
+    scaleX: 1, ease: 'none',
+    scrollTrigger: {trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: .3}
+  });
+
+  // ---------- hero background video subtle parallax only ----------
+  gsap.to('.hero-panel video', {
+    scale: 1.15, yPercent: 8, ease: 'none',
+    scrollTrigger: {trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true}
+  });
+
+  // ---------- generic reveals ----------
+  document.querySelectorAll('[data-reveal]').forEach(function(el){
+    gsap.fromTo(el, {y: 34, opacity: 0}, {
+      y: 0, opacity: 1, duration: .9, ease: 'power3.out',
+      scrollTrigger: {trigger: el, start: 'top 86%'}
+    });
+  });
+
+  // heading word cascades
+  document.querySelectorAll('[data-split]').forEach(function(el){
+    gsap.fromTo(el.querySelectorAll('.wi'), {yPercent: 115}, {
+      yPercent: 0, duration: .9, stagger: .05, ease: 'power4.out',
+      scrollTrigger: {trigger: el, start: 'top 86%'}
+    });
+  });
+
+  // side entrances (doctor cards, service columns)
+  document.querySelectorAll('[data-from="left"]').forEach(function(el){
+    gsap.fromTo(el, {x: -90, opacity: 0, rotate: -1.5}, {
+      x: 0, opacity: 1, rotate: 0, duration: 1.05, ease: 'power3.out',
+      scrollTrigger: {trigger: el, start: 'top 84%'}
+    });
+  });
+  document.querySelectorAll('[data-from="right"]').forEach(function(el){
+    gsap.fromTo(el, {x: 90, opacity: 0, rotate: 1.5}, {
+      x: 0, opacity: 1, rotate: 0, duration: 1.05, ease: 'power3.out',
+      scrollTrigger: {trigger: el, start: 'top 84%'}
+    });
+  });
+
+  // & badge pop
+  gsap.fromTo('#gridAmp', {scale: 0, rotate: -120}, {
+    scale: 1, rotate: 0, duration: .9, ease: 'back.out(2.2)',
+    scrollTrigger: {trigger: '.doctor-grid', start: 'top 70%'}
+  });
+
+  // staggered lists
+  document.querySelectorAll('[data-stagger]').forEach(function(group){
+    gsap.fromTo(group.children, {y: 26, opacity: 0}, {
+      y: 0, opacity: 1, duration: .65, stagger: .08, ease: 'power3.out',
+      scrollTrigger: {trigger: group, start: 'top 85%'}
+    });
+  });
+
+  // cinematic band parallax
+  gsap.fromTo('#bandVideo', {yPercent: -9}, {
+    yPercent: 9, ease: 'none',
+    scrollTrigger: {trigger: '.band', start: 'top bottom', end: 'bottom top', scrub: true}
+  });
+
+  // booking steps progress line
+  gsap.to('#stepsLine', {
+    scaleX: 1, ease: 'none',
+    scrollTrigger: {trigger: '.steps-wrap', start: 'top 78%', end: 'top 30%', scrub: .4}
+  });
+  document.querySelectorAll('[data-step] .step-num').forEach(function(el, i){
+    gsap.fromTo(el, {scale: 0}, {
+      scale: 1, duration: .6, ease: 'back.out(2.5)', delay: i * .18,
+      scrollTrigger: {trigger: '.steps-wrap', start: 'top 76%'}
+    });
+  });
+  document.querySelectorAll('[data-step]').forEach(function(el, i){
+    gsap.fromTo(el, {y: 30, opacity: 0}, {
+      y: 0, opacity: 1, duration: .8, ease: 'power3.out', delay: i * .15,
+      scrollTrigger: {trigger: '.steps-wrap', start: 'top 80%'}
+    });
+  });
+
+  // location drift
+  gsap.fromTo('#locAmp', {y: 120, rotate: 6}, {
+    y: -60, rotate: 0, ease: 'none',
+    scrollTrigger: {trigger: '.location', start: 'top bottom', end: 'bottom top', scrub: true}
+  });
+
+  // footer logotype reveal
+  gsap.fromTo('.footer-logo .wi', {yPercent: 115}, {
+    yPercent: 0, duration: 1, stagger: .1, ease: 'power4.out',
+    scrollTrigger: {trigger: '.footer', start: 'top 92%'}
+  });
+
+  // magnetic buttons
+  if (finePointer){
+    document.querySelectorAll('.magnetic').forEach(function(btn){
+      var strength = 14;
+      btn.addEventListener('pointermove', function(e){
+        var r = btn.getBoundingClientRect();
+        var mx = e.clientX - (r.left + r.width/2);
+        var my = e.clientY - (r.top + r.height/2);
+        gsap.to(btn, {x: mx/r.width*strength*2, y: my/r.height*strength, duration: .35, ease: 'power2.out'});
+      });
+      btn.addEventListener('pointerleave', function(){
+        gsap.to(btn, {x: 0, y: 0, duration: .5, ease: 'elastic.out(1, .45)'});
+      });
+    });
+
+    document.querySelectorAll('.tilt').forEach(function(card){
+      card.addEventListener('pointermove', function(e){
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left)/r.width - .5;
+        var py = (e.clientY - r.top)/r.height - .5;
+        gsap.to(card, {rotateY: px*7, rotateX: -py*7, transformPerspective: 900, duration: .4, ease: 'power2.out'});
+      });
+      card.addEventListener('pointerleave', function(){
+        gsap.to(card, {rotateY: 0, rotateX: 0, duration: .7, ease: 'elastic.out(1,.5)'});
+      });
+    });
+  }
+
+  // ============ CLINICAL CONDITION MODAL & POPUP LOGIC ============
+  var currentModalSvc = null;
+  var currentModalDocKey = 'saransh';
+
+  function openConditionModal(svc, docKey){
+    if (!svc) return;
+    currentModalSvc = svc;
+    currentModalDocKey = docKey || 'saransh';
+
+    var m = document.getElementById('gallbladderModal');
+    var dialog = document.getElementById('modalDialog');
+    if (!m || !dialog) return;
+
+    // Apply color theme (teal for gut, rose for gynae)
+    if (currentModalDocKey === 'prapti') {
+      dialog.classList.add('gynae-mode');
+    } else {
+      dialog.classList.remove('gynae-mode');
+    }
+
+    // Populate Headers
+    var eyebrowEl = document.getElementById('modalEyebrow');
+    if (eyebrowEl) {
+      eyebrowEl.textContent = svc.eyebrow || (currentModalDocKey === 'prapti' ? 'Patient Clinical Guide · Obstetrics & Gynaecology' : 'Patient Clinical Guide · Surgical Gastroenterology');
+    }
+
+    var titleEl = document.getElementById('gbModalTitle');
+    if (titleEl) titleEl.textContent = svc.title || 'Clinical Guide';
+
+    var docSubEl = document.getElementById('modalDoctorSub');
+    if (docSubEl) {
+      docSubEl.textContent = svc.doctor || (currentModalDocKey === 'prapti' ? 'Dr Prapti Shah (MS OBGYN, DNB, FMAS) · GMC Nagpur' : 'Dr Saransh Vakharia (MCh Surgical Gastroenterology) · GMC Nagpur');
+    }
+
+    // Helper to build list items with SVG checkmark
+    var strokeColor = currentModalDocKey === 'prapti' ? '#B8506A' : '#1E5F63';
+    function makeCheckList(items){
+      if (!items || !items.length) return '';
+      return items.map(function(item){
+        var textHtml = '';
+        if (typeof item === 'string') {
+          var colonIdx = item.indexOf(':');
+          if (colonIdx !== -1) {
+            textHtml = '<div><strong>' + item.substring(0, colonIdx) + ':</strong>' + item.substring(colonIdx + 1) + '</div>';
+          } else {
+            textHtml = '<div>' + item + '</div>';
+          }
+        } else if (item && item.title) {
+          textHtml = '<div><strong>' + item.title + ':</strong> ' + (item.text || '') + '</div>';
+        }
+        return '<li>' +
+          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="' + strokeColor + '" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>' +
+          textHtml +
+        '</li>';
+      }).join('');
+    }
+
+    // Panel 1: Symptoms
+    var symIntroEl = document.getElementById('modalSymptomsIntro');
+    if (symIntroEl) symIntroEl.textContent = svc.symptomsIntro || 'Key symptoms and warning signs associated with this condition:';
+    
+    var symListEl = document.getElementById('modalSymptomsList');
+    if (symListEl) symListEl.innerHTML = makeCheckList(svc.symptoms);
+
+    var rfBox = document.getElementById('modalRedFlagsBox');
+    var rfTextEl = document.getElementById('modalRedFlagsText');
+    if (rfBox && rfTextEl) {
+      if (svc.redFlags) {
+        rfBox.style.display = 'block';
+        rfTextEl.textContent = svc.redFlags;
+      } else {
+        rfBox.style.display = 'none';
+      }
+    }
+
+    // Panel 2: Investigations
+    var invIntroEl = document.getElementById('modalInvestigateIntro');
+    if (invIntroEl) invIntroEl.textContent = svc.investigationsIntro || 'Focused diagnostic workup and evaluations:';
+
+    var invListEl = document.getElementById('modalInvestigateList');
+    if (invListEl) invListEl.innerHTML = makeCheckList(svc.investigations);
+
+    var invNoticeBox = document.getElementById('modalInvestigateNoticeBox');
+    var invNoticeTitle = document.getElementById('modalInvestigateNoticeTitle');
+    var invNoticeText = document.getElementById('modalInvestigateNoticeText');
+    if (invNoticeBox && invNoticeText) {
+      if (svc.investigationsNotice) {
+        invNoticeBox.style.display = 'block';
+        if (invNoticeTitle) invNoticeTitle.textContent = svc.investigationsNoticeTitle || '💡 Clinical Notice:';
+        invNoticeText.textContent = svc.investigationsNotice;
+      } else {
+        invNoticeBox.style.display = 'none';
+      }
+    }
+
+    // Panel 3: Treatment
+    var trtIntroEl = document.getElementById('modalTreatmentIntro');
+    if (trtIntroEl) trtIntroEl.textContent = svc.treatmentIntro || 'Evidence-based treatment protocols and surgical options:';
+
+    var trtListEl = document.getElementById('modalTreatmentList');
+    if (trtListEl) trtListEl.innerHTML = makeCheckList(svc.treatment);
+
+    // Sync Footer Actions
+    var modalWaBtn = document.getElementById('modalWaBtn');
+    if (modalWaBtn) {
+      var rawPhone = (window.SITE && (window.SITE.whatsappPhone || window.SITE.phone)) || '+919820000000';
+      var cleanNum = String(rawPhone).replace(/[^\d]/g, '');
+      if (!cleanNum.startsWith('91') && cleanNum.length === 10) cleanNum = '91' + cleanNum;
+      var waMsg = 'Hello Gut & Gynae Clinic Desk,\n\nI would like to inquire regarding an OPD appointment for ' + (svc.title || 'Consultation') + ' at GMC Nagpur.';
+      modalWaBtn.href = 'https://wa.me/' + cleanNum + '?text=' + encodeURIComponent(waMsg);
+    }
+
+    var modalPageLink = m.querySelector('.modal-page-link');
+    if (modalPageLink) {
+      modalPageLink.href = svc.guidePageUrl || (svc.id + '.html');
+      var labelSpan = modalPageLink.querySelector('span');
+      if (labelSpan) labelSpan.innerHTML = 'See details &rarr;';
+    }
+
+    // Reset to First Tab
+    var tabBtns = m.querySelectorAll('.modal-tab-btn');
+    var panels = m.querySelectorAll('.modal-panel');
+    tabBtns.forEach(function(b, idx){
+      if (idx === 0) {
+        b.classList.add('is-active');
+        b.setAttribute('aria-selected', 'true');
+      } else {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected', 'false');
+      }
+    });
+    panels.forEach(function(p, idx){
+      if (idx === 0) p.classList.add('is-active');
+      else p.classList.remove('is-active');
+    });
+
+    // Open Modal
+    m.classList.add('is-open');
+    m.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (window.lenis && typeof window.lenis.stop === 'function') {
+      try { window.lenis.stop(); } catch(e){}
+    }
+  }
+
+  function openGallbladderModal(){
+    var s = (window.SITE && window.SITE.saransh && window.SITE.saransh.services) ? window.SITE.saransh.services[0] : null;
+    openConditionModal(s, 'saransh');
+  }
+
+  function closeConditionModal(){
+    var m = document.getElementById('gallbladderModal');
+    if (!m) return;
+    m.classList.remove('is-open');
+    m.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (window.lenis && typeof window.lenis.start === 'function') {
+      try { window.lenis.start(); } catch(e){}
+    }
+  }
+
+  var gbModal = document.getElementById('gallbladderModal');
+  if (gbModal){
+    var closeGbBtn = document.getElementById('closeGbModal');
+    if (closeGbBtn){
+      closeGbBtn.addEventListener('click', closeConditionModal);
+    }
+    gbModal.addEventListener('click', function(e){
+      if (e.target === gbModal) closeConditionModal();
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && gbModal.classList.contains('is-open')){
+        closeConditionModal();
+      }
+    });
+
+    // Modal Tabs Navigation
+    var tabBtns = gbModal.querySelectorAll('.modal-tab-btn');
+    var panels = gbModal.querySelectorAll('.modal-panel');
+    tabBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var targetId = btn.getAttribute('data-tab');
+        tabBtns.forEach(function(b){
+          b.classList.remove('is-active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        panels.forEach(function(p){
+          p.classList.remove('is-active');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+        var targetPanel = document.getElementById(targetId);
+        if (targetPanel) targetPanel.classList.add('is-active');
+      });
+    });
+
+    // Modal Book OPD button
+    var modalBookBtn = document.getElementById('modalBookBtn');
+    if (modalBookBtn){
+      modalBookBtn.addEventListener('click', function(){
+        closeConditionModal();
+        var bookSection = document.getElementById('book');
+        if (bookSection){
+          if (window.lenis && typeof window.lenis.scrollTo === 'function') {
+            window.lenis.scrollTo(bookSection, { offset: -20 });
+          } else {
+            bookSection.scrollIntoView({ behavior: 'smooth' });
+          }
+          var docRadios = document.querySelectorAll('input[name="doctor"]');
+          docRadios.forEach(function(r){
+            if (currentModalDocKey === 'prapti') {
+              if (r.value.toLowerCase().indexOf('prapti') !== -1) r.checked = true;
+            } else {
+              if (r.value.toLowerCase().indexOf('saransh') !== -1) r.checked = true;
+            }
+          });
+          var concernInput = document.getElementById('f-concern');
+          if (concernInput && currentModalSvc){
+            concernInput.value = 'Consultation for ' + currentModalSvc.title;
+          }
+          var nameInput = document.getElementById('f-name');
+          if (nameInput) setTimeout(function(){ nameInput.focus(); }, 600);
+        }
+      });
+    }
+
+    // Bind static fallback cards in case JS initializes before applyContent
+    document.querySelectorAll('.svc-card.is-clickable').forEach(function(card){
+      card.addEventListener('click', function(){
+        var svcId = card.getAttribute('data-svc-id');
+        var docKey = card.getAttribute('data-doc') || 'saransh';
+        if (window.SITE && window.SITE[docKey] && window.SITE[docKey].services) {
+          var matched = window.SITE[docKey].services.find(function(s){ return s.id === svcId; });
+          if (matched) {
+            openConditionModal(matched, docKey);
+            return;
+          }
+        }
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>
