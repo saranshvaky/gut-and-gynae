@@ -246,11 +246,11 @@ html:not(.js) .amp-svg text{fill-opacity:1;stroke-dashoffset:0;animation:none}
 }
 
 .hero .scroll-hint{
-  position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
-  color:rgba(255,255,255,.75);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;
-  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+  position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
+  color:rgba(255,255,255,.75);z-index:2;display:flex;flex-direction:column;align-items:center;gap:4px;
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;pointer-events:none;
 }
-.scroll-hint .line{width:1px;height:26px;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent);overflow:hidden;position:relative}
+.scroll-hint .line{width:1px;height:20px;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent);overflow:hidden;position:relative}
 .scroll-hint .line::after{content:"";position:absolute;left:0;top:-100%;width:100%;height:100%;background:#fff;animation:lineDrop 2s var(--ease) infinite}
 
 /* ============ marquee ============ */
@@ -1064,12 +1064,12 @@ html:not(.js) .amp-svg text{fill-opacity:1;stroke-dashoffset:0;animation:none}
   .logo{font-size:20px}
   .nav .btn{padding:9px 15px;font-size:13px}
 
-  .hero{padding:90px 16px 44px;text-align:center}
+  .hero{padding:85px 16px 54px;text-align:center}
   .hero-title{font-size:clamp(44px,12vw,62px);gap:.02em}
   .amp-svg{width:clamp(50px,11vw,66px)}
   .hero-sub{font-size:14.5px;line-height:1.45;margin-top:10px;max-width:370px}
   .hero-ctas{
-    margin-top:14px;margin-bottom:8px;
+    margin-top:14px;margin-bottom:12px;
     display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;
     gap:8px;width:100%;max-width:380px;
   }
@@ -1082,6 +1082,8 @@ html:not(.js) .amp-svg text{fill-opacity:1;stroke-dashoffset:0;animation:none}
     background:rgba(255,255,255,.14);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
     border:1px solid rgba(255,255,255,.35);
   }
+  .hero .scroll-hint{bottom:4px;gap:3px;font-size:9.5px}
+  .scroll-hint .line{height:16px}
 
   .doctor-grid{gap:24px}
   .doctor-card{padding:32px 24px 28px}
