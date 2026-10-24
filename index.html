@@ -1496,13 +1496,14 @@ html:not(.js) .amp-svg text{fill-opacity:1;stroke-dashoffset:0;animation:none}
         
         <!-- 2-line Role -->
         <div class="doctor-role" id="c-prapti-role">
-          <span class="role-line">Obstetrician &amp; Gynecologist,</span>
-          <span class="role-line">Infertility Specialist &amp; Laparoscopic Surgeon</span>
+          <span class="role-line">Obstetrician &amp; Gynaecologist,</span>
+          <span class="role-line">Consultant Laparoscopic Surgeon and Infertility Specialist</span>
         </div>
 
         <!-- Symmetrically Aligned Degrees -->
         <div class="doctor-cred" id="c-prapti-cred">
-          <div class="cred-line">MS Obstetrics &amp; Gynecology, DNB OBGY</div>
+          <div class="cred-line">MS Obstetrics &amp; Gynaecology (KEM Hospital)</div>
+          <div class="cred-line">DNB OBGY</div>
           <div class="cred-line">MBBS</div>
           <div class="cred-line">Fellowship in ART (Infertility)</div>
         </div>
@@ -2519,7 +2520,7 @@ html:not(.js) .amp-svg text{fill-opacity:1;stroke-dashoffset:0;animation:none}
 
     var docSubEl = document.getElementById('modalDoctorSub');
     if (docSubEl) {
-      docSubEl.textContent = svc.doctor || (currentModalDocKey === 'prapti' ? 'Dr Prapti Shah (MS OBGYN, DNB, FMAS) · GMC Nagpur' : 'Dr Saransh Vakharia (MCh Surgical Gastroenterology) · GMC Nagpur');
+      docSubEl.textContent = svc.doctor || (currentModalDocKey === 'prapti' ? 'Dr Prapti Shah (MS OBGYN, DNB) · GMC Nagpur' : 'Dr Saransh Vakharia (MCh Surgical Gastroenterology) · GMC Nagpur');
     }
 
     // Helper to build list items with SVG checkmark

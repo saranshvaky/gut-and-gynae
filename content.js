@@ -264,16 +264,16 @@ window.SITE = {
     name: "Dr Prapti Shah",
     roleLines: [
       "Obstetrician & Gynaecologist,",
-      "Consultant Laparoscopic Surgeon"
+      "Consultant Laparoscopic Surgeon and Infertility Specialist"
     ],
-    role: "Obstetrician & Gynaecologist, Consultant Laparoscopic Surgeon",
+    role: "Obstetrician & Gynaecologist, Consultant Laparoscopic Surgeon and Infertility Specialist",
     credentialsLines: [
-      "MS Obstetrics & Gynaecology (Gold Medalist)",
-      "DNB OBGY, FMAS",
+      "MS Obstetrics & Gynaecology (KEM Hospital)",
+      "DNB OBGY",
       "MBBS",
       "Fellowship in ART (Infertility)"
     ],
-    credentials: "MS Obstetrics & Gynecology, DNB OBGY · MBBS · Fellowship in ART (Infertility)",
+    credentials: "MS Obstetrics & Gynaecology (KEM Hospital) · DNB OBGY · MBBS · Fellowship in ART (Infertility)",
     photo: "assets/dr-prapti.jpg",
     badges: [
       "Reproductive Medicine Specialist",
@@ -297,7 +297,7 @@ window.SITE = {
         guideLabel: "See details",
         quickGuideLabel: "Quick Guide",
         eyebrow: "Patient Clinical Guide · Obstetrics & Gynaecology",
-        doctor: "Dr Prapti Shah (MS OBGYN, DNB, FMAS) · GMC Nagpur",
+        doctor: "Dr Prapti Shah (MS OBGYN, DNB) · GMC Nagpur",
         symptomsIntro: "Comprehensive antenatal care ensures maternal wellbeing and healthy fetal development across all three trimesters:",
         symptoms: [
           "Missed menstrual period confirmed with a positive urine pregnancy test",
@@ -331,7 +331,7 @@ window.SITE = {
         guideLabel: "See details",
         quickGuideLabel: "Quick Guide",
         eyebrow: "Patient Clinical Guide · Obstetrics & Gynaecology",
-        doctor: "Dr Prapti Shah (MS OBGYN, DNB, FMAS) · GMC Nagpur",
+        doctor: "Dr Prapti Shah (MS OBGYN, DNB) · GMC Nagpur",
         symptomsIntro: "A structured fertility workup identifies underlying ovulatory, tubal, uterine, or male-factor barriers:",
         symptoms: [
           "Inability to conceive after 12 months of regular unprotected intercourse (or after 6 months if female age ≥35)",
@@ -365,7 +365,7 @@ window.SITE = {
         guideLabel: "See details",
         quickGuideLabel: "Quick Guide",
         eyebrow: "Patient Clinical Guide · Obstetrics & Gynaecology",
-        doctor: "Dr Prapti Shah (MS OBGYN, DNB, FMAS) · GMC Nagpur",
+        doctor: "Dr Prapti Shah (MS OBGYN, DNB) · GMC Nagpur",
         symptomsIntro: "Polycystic Ovary Syndrome (PCOS) involves hormonal imbalance, irregular ovulation, and insulin resistance:",
         symptoms: [
           "Irregular, delayed menstrual periods (cycles exceeding 35-45 days) or absent periods",
@@ -399,7 +399,7 @@ window.SITE = {
         guideLabel: "See details",
         quickGuideLabel: "Quick Guide",
         eyebrow: "Patient Clinical Guide · Obstetrics & Gynaecology",
-        doctor: "Dr Prapti Shah (MS OBGYN, DNB, FMAS) · GMC Nagpur",
+        doctor: "Dr Prapti Shah (MS OBGYN, DNB) · GMC Nagpur",
         symptomsIntro: "Benign gynaecological conditions causing pelvic pain or abnormal bleeding can be safely resolved with keyhole surgery:",
         symptoms: [
           "Heavy, prolonged menstrual bleeding (menorrhagia) requiring frequent pad changes or causing severe anemia",
@@ -433,7 +433,7 @@ window.SITE = {
         guideLabel: "See details",
         quickGuideLabel: "Quick Guide",
         eyebrow: "Patient Clinical Guide · Obstetrics & Gynaecology",
-        doctor: "Dr Prapti Shah (MS OBGYN, DNB, FMAS) · GMC Nagpur",
+        doctor: "Dr Prapti Shah (MS OBGYN, DNB) · GMC Nagpur",
         symptomsIntro: "Preventive screening detects silent precancerous changes and hormonal shifts long before symptoms develop:",
         symptoms: [
           "Screening is designed for asymptomatic women to ensure ongoing reproductive health and peace of mind",
@@ -467,7 +467,7 @@ window.SITE = {
         guideLabel: "See details",
         quickGuideLabel: "Quick Guide",
         eyebrow: "Patient Clinical Guide · Obstetrics & Gynaecology",
-        doctor: "Dr Prapti Shah (MS OBGYN, DNB, FMAS) · GMC Nagpur",
+        doctor: "Dr Prapti Shah (MS OBGYN, DNB) · GMC Nagpur",
         symptomsIntro: "The menopause transition involves declining ovarian hormone production leading to physical and emotional changes:",
         symptoms: [
           "Hot flashes, sudden sweating episodes, night sweats, and frequent sleep disruptions",
